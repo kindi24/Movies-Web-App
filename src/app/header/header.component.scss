@@ -1,15 +1,18 @@
-#container{
-    align-items: center;
-    text-align: center;
-}
+
 
 #logo{
-    background-color: darkgreen;
-    height: 300px;
-    align-items: center;
+    background-color: chartreuse;
+    height: max-content;
+    align-items:start;
+    padding: 10px;
+}
+
+#title{
+    color:black;
 }
 
 #menu{
     background-color: darkolivegreen;
     height: 100px;
+    padding: 10px;
 }
