@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from 'express';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,5 +10,10 @@ import { Router } from 'express';
 })
 export class LoginComponent {
 
-  
+  constructor(private router: Router) {}
+
+  login() {
+    alert('Successful sign');
+    this.router.navigate(['/menu']);
+  }
 }
