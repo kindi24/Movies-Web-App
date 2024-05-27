@@ -1,15 +1,37 @@
+#login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #container{
     background-color: aqua;
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 500px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 13%;
 }
 
 #title{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30pt;
+}
+
+#username{
+    margin-bottom: 10px;
+    font-size:16pt;
+}
+
+#password{
+    margin-bottom: 20px;
+    font-size:16pt;
+}
+
+#button{
+    font-size:20pt;
 }
 

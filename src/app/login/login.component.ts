@@ -13,7 +13,10 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   login() {
-    alert('Successful sign');
+    alert('Successful sign-in');
     this.router.navigate(['/menu']);
   }
+
+    
+
 }
