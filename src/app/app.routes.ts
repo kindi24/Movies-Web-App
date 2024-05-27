@@ -10,5 +10,9 @@ export const routes: Routes = [
     {
         path: 'menu', 
         loadChildren: () => import('./menu/menu-routing.module').then((m) => m.MenuRoutingModule),
+    },
+    {
+        path: 'settings', 
+        loadChildren: () => import('./settings/settings-routing.module').then((m) => m.SettingsRoutingModule),
     }
 ];
