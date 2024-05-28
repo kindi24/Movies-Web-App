@@ -13,7 +13,10 @@ export class HeaderComponent {
   constructor(private router: Router) {}
 
   logout(){
-    alert('Successful log-out');
-    this.router.navigate(['']);
+    const confirmation = confirm('Are you sure you want to log out?');
+    if (confirmation) {
+      alert('Successful log-out');
+      this.router.navigate(['']);
+    }
   }
 }
