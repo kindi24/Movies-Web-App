@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +9,5 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  constructor(private router: Router) {}
-
-  logout(){
-    const confirmation = confirm('Are you sure you want to log out?');
-    if (confirmation) {
-      alert('Successful log-out');
-      this.router.navigate(['']);
-    }
-  }
+  
 }
