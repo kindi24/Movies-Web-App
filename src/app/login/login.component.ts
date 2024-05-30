@@ -16,7 +16,4 @@ export class LoginComponent {
     alert('Successful sign-in');
     this.router.navigate(['/menu']);
   }
-
-    
-
 }
