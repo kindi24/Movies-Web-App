@@ -1,21 +1,21 @@
+#container{
+    display: flex;
+    justify-content: start;
+}
+
 #logo{
     background-color: ivory;
     height: max-content;
-    align-items:start;
-    padding: 10px;
-    display: flex;
+    padding: 1px;
 }
 
-#logo>div, h1 {
-    flex: 2;
-}
-
-.persionIcon{
+#container-icon{
     display: flex;
     justify-content: end;
-    height: 100%;
+    text-align: end;
+    margin-top: 85px;
 }
 
-#icon{
-    height: 100%;
+.container-fluid{
+    margin-top: 60px;
 }
