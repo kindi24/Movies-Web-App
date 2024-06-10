@@ -1,10 +1,10 @@
 #container{
-    display: flex;
+    display: inline-block;
     justify-content: start;
+    width: 100%;
 }
 
 #logo{
-    background-color: ivory;
     height: max-content;
     padding: 1px;
 }

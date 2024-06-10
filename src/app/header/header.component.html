@@ -1,43 +1,21 @@
 <header>
     <div id="container">
-        <div id="logo">
+        <nav class="navbar navbar-inverse" style="background-color: gray;">
+          <div id="logo">
             <div><img src="/assets/images/Logo.png"></div>
         </div>   
-    
-
-    <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-body">
-    <div class="container-fluid">
-      <button
-        data-mdb-collapse-init
-        class="navbar-toggler"
-        type="button"
-        data-mdb-target="#navbarExample01"
-        aria-controls="navbarExample01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarExample01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="/menu">Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/settings">Settings</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)" (click)="logout()">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div id="container-icon">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li><a href="/menu" style="color: aliceblue;">Menu</a></li>
+              <li><a href="/settings" style="color: aliceblue;">Settings</a></li>
+              <li><a href="javascript:void(0)" (click)="logout()" style="color: aliceblue;">Logout</a></li>
+            </ul>
+          </div>
+            <div id="container-icon">
     <a class="personIcon" href="#">
       <img id="icon" src="assets/images/person.svg">
     </a>
   </div>
+        </nav>   
   </div>
 </header>
