@@ -19,4 +19,10 @@ export class HeaderComponent {
       this.router.navigate(['']);
     }
   }
+
+  isMenuOpen = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
