@@ -1,39 +1,3 @@
-$menuHeight: 60px;
-$menuBreakpoint: 768px;
-
 #icon{
     margin-left: 80%;
 }
-
-  .menu {
-    display: flex;
-    align-items: center;
-
-    @media (max-width: $menuBreakpoint) {
-      display: none;
-
-      &.is-open {
-        display: block;
-        position: absolute;
-        top: #{$menuHeight + 2};
-        background: #fff;
-        width: 100%;
-
-        .menu-item {
-          border-bottom: 1px solid #cccccc;
-        }
-      }
-    }
-
-    .menu-item {
-      padding: 0 10px;
-      height: $menuHeight;
-      line-height: $menuHeight;
-      text-decoration: none;
-      display: block;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #454545;
-    }
-  }
