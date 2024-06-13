@@ -11,5 +11,5 @@ import { HeaderComponent } from '../header/header.component';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-
+  checkWidth = window.innerWidth;
 }
