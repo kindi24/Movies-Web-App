@@ -6,14 +6,10 @@
     margin-left: 85%;
 }
 
-@media (min-width: 768px) {
-    .toggle{
-        display: inline-block;
-    }
+#iconMobile{
+    margin-left: 30%;
 }
 
-@media (max-width: 768px) {
-    .toggle{
-        display: inline-flex;
-    }
+#navMobile{
+    margin-top: 0px;
 }

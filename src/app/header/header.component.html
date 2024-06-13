@@ -1,5 +1,5 @@
-<header style="background-color: lightgray;">
-  <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary" style="margin-bottom: 0px;">
     <div class="container-fluid">
         <img id="logo" src="/assets/images/Logo.png">
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -12,10 +12,20 @@
         
       </div>
       @if (checkWidth < 768) {
+        <img id="iconMobile" src="assets/images/person.svg">
         <div class="toggle">
           <img [src]="image" (click)="toggleMenu()">
         </div>
       }
     </div>
   </nav>
+  @if (checkWidth < 768 && this.isMenuOpen) {   
+    <nav class="navbar navbar-light bg-light" id="navMobile">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/menu" style="font-size: large;"><b>Menu</b></a>
+        <a class="nav-link" href="/settings" style="font-size: large;"><b>Settings</b></a>
+        <a class="nav-link" href="javascript:void(0)" (click)="logout()" style="font-size: large;"><b>Logout</b></a>
+      </div>
+    </nav>
+  }
 </header>
