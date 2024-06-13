@@ -6,13 +6,13 @@
     margin-left: 85%;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 768px) {
     .toggle{
         display: inline-block;
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
     .toggle{
         display: inline-flex;
     }

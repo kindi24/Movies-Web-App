@@ -20,6 +20,8 @@ export class HeaderComponent {
     }
   }
 
+  checkWidth = window.innerWidth;
+
   image: any = "assets/images/menu.svg";
   isMenuOpen = false;
 

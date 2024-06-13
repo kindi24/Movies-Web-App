@@ -11,9 +11,11 @@
         <img id="icon" src="assets/images/person.svg">
         
       </div>
-      <div class="toggle">
-        <img [src]="image" (click)="toggleMenu()">
-      </div>
+      @if (checkWidth < 768) {
+        <div class="toggle">
+          <img [src]="image" (click)="toggleMenu()">
+        </div>
+      }
     </div>
   </nav>
 </header>
