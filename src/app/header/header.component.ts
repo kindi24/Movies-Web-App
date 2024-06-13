@@ -20,9 +20,12 @@ export class HeaderComponent {
     }
   }
 
+  image: any = "assets/images/menu.svg";
   isMenuOpen = false;
 
   toggleMenu(): void {
+    if(!this.isMenuOpen) this.image = "assets/images/close.svg";
+    else this.image = "assets/images/menu.svg";
     this.isMenuOpen = !this.isMenuOpen;
   }
 }
