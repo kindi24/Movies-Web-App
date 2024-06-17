@@ -14,6 +14,10 @@ import { OmdbServiceComponent } from '../omdb-service/omdb-service.component';
 export class MenuComponent {
   checkWidth = window.innerWidth;
 
+  searchMovies(){
+    console.log("Movies search");
+  }
+
   movieData: any;
 
   /*
