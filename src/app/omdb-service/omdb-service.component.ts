@@ -15,7 +15,7 @@ export class OmdbServiceComponent {
 
   constructor(private http: HttpClient) {}
 
-  getMovieData(movieId: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}&i=${movieId}`);
+  getMovieData(movieTitle: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}&s=${movieTitle}`);
   }
 }
