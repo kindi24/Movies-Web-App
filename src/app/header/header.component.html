@@ -6,11 +6,15 @@
         <div class="navbar-nav">
           <a class="nav-link" href="/menu" style="font-size: large;"><b>Menu</b></a>
           <a class="nav-link" href="/settings" style="font-size: large;"><b>Settings</b></a>
-          
-          <!--Allagh to logout na fygei apo kei-->
-          <a class="nav-link" href="javascript:void(0)" (click)="logout()" style="font-size: large;"><b>Logout</b></a>
         </div>
-        <img id="icon" src="assets/images/person.svg">
+    
+        <div class="dropdown-container">
+          <img [src]="profilePhoto" (click)="profileContent()">
+          <div *ngIf="profileVisible" class="dropdown-menu">
+            <a (click)="myAccount()">My account</a>
+            <a (click)="logout()">Logout</a>
+          </div>
+        </div>
         
       </div>
       @if (checkWidth < 768) {
