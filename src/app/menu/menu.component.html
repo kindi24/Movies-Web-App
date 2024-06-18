@@ -63,13 +63,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Title 1</td>
-                <td>Year 1</td>
-              </tr>
-              <tr>
-                <td>Title 2</td>
-                <td>Year 2</td>
+              <tr *ngFor="let movie of movies">
+                <td>{{ movie.Title }}</td>
+                <td>{{ movie.Year }}</td>
               </tr>
             </tbody>
           </table>
