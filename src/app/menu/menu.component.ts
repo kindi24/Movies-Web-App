@@ -19,7 +19,8 @@ export class MenuComponent {
   movieData: any;
 
   searchMovies(){
-    console.log("Movies search: " +this.movieTitle);
+    if (this.movieTitle == '') console.log("No imput");
+    else console.log("Movies search: " +this.movieTitle);
   }
 
   /*
