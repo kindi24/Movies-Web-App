@@ -5,6 +5,7 @@ import { HeaderComponent } from '../header/header.component';
 import { OmdbServiceComponent } from '../omdb-service/omdb-service.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { OmdbService } from '../omdb-service/omdb-service';
 
 @Component({
   selector: 'app-menu',

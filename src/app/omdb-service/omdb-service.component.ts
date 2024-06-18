@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-omdb-service',
@@ -11,11 +9,4 @@ import { Observable } from 'rxjs';
 })
 export class OmdbServiceComponent {
 
-  private apiUrl = 'http://www.omdbapi.com/?apikey=826f752f';
-
-  constructor(private http: HttpClient) {}
-
-  searchMoviesByTitle(title: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}&s=${title}`);
-  }
 }
