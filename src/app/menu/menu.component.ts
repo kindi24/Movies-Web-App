@@ -25,8 +25,8 @@ export class MenuComponent {
   /*
   constructor(private omdbService: omdbService) {}
 
-  getMovieDetails(movieId: string): void {
-    this.omdbService.getMovieData(movieId).subscribe(data => {
+  getMovieDetails(): void {
+    this.omdbService.getMovieData(this.movieTitle).subscribe(data => {
       this.movieData = data;
     });
   }
