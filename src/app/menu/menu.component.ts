@@ -41,7 +41,6 @@ export class MenuComponent {
         }
       });
     }
-    if (this.movies.length === 0 && this.searchTitle.trim()) alert("No movies found");
   }
     */
 }
