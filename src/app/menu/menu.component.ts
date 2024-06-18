@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
@@ -16,7 +16,9 @@ export class MenuComponent {
   checkWidth = window.innerWidth;
 
   movieTitle: string = '';
-  movieData: any;
+  
+  movies: any[] = [];
+  searchTitle: string = '';
 
   searchMovies(){
     if (this.movieTitle == '') console.log("No imput");
@@ -24,12 +26,21 @@ export class MenuComponent {
   }
 
   /*
-  constructor(private omdbService: omdbService) {}
+  constructor(private omdbService: OmdbService) {}
 
-  getMovieDetails(): void {
-    this.omdbService.getMovieData(this.movieTitle).subscribe(data => {
-      this.movieData = data;
-    });
+  ngOnInit(): void {}
+
+  searchMovies(): void {
+    if (this.searchTitle.trim()) {
+      this.omdbService.searchMoviesByTitle(this.searchTitle).subscribe(response => {
+        if (response.Search) {
+          this.movies = response.Search;
+        } else {
+          this.movies = [];
+        }
+      });
+    }
+    if (this.movies.length === 0 && this.searchTitle.trim()) alert("No movies found");
   }
     */
 }
