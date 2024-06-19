@@ -13,7 +13,7 @@ import { OmdbService } from '../omdb.service';
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
   checkWidth = window.innerWidth;
 
   movieTitle: string = '';
@@ -26,11 +26,14 @@ export class MenuComponent {
     else console.log("Movies search: " +this.movieTitle);
   }
 
+  // Crashes app with this command
+  //constructor(private omdbService: OmdbService) {}
+
+  ngOnInit(): void {
+    this.searchMovies();
+  }
+
   /*
-  constructor(private omdbService: OmdbService) {}
-
-  ngOnInit(): void {}
-
   searchMovies(): void {
     if (this.searchTitle.trim()) {
       this.omdbService.searchMoviesByTitle(this.searchTitle).subscribe(response => {
