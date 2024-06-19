@@ -2,15 +2,14 @@ import { Component, OnInit} from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
-import { OmdbServiceComponent } from '../omdb-service/omdb-service.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { OmdbService } from '../omdb-service/omdb-service';
+import { OmdbService } from '../omdb.service';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, OmdbServiceComponent, FormsModule, CommonModule],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, FormsModule, CommonModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
