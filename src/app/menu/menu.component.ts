@@ -16,13 +16,12 @@ import { OmdbService } from '../omdb.service';
 export class MenuComponent implements OnInit {
   checkWidth = window.innerWidth;
 
-  movieTitle: string = '';
   
   movies: any[] = [];
-  searchTitle: string = '';
+  movieTitle: string = '';
 
   searchMovies(){
-    if (this.movieTitle == '') console.log("No imput");
+    if (this.movieTitle == '') console.log("No input");
     else console.log("Movies search: " +this.movieTitle);
   }
 
@@ -35,8 +34,8 @@ export class MenuComponent implements OnInit {
 
   /*
   searchMovies(): void {
-    if (this.searchTitle.trim()) {
-      this.omdbService.searchMoviesByTitle(this.searchTitle).subscribe(response => {
+    if (this.movieTitle.trim()) {
+      this.omdbService.searchMoviesByTitle(this.movieTitle).subscribe(response => {
         if (response.Search) {
           this.movies = response.Search;
         } else {
