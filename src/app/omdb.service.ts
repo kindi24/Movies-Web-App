@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OmdbService {
+
   private apiUrl = 'http://www.omdbapi.com/?apikey=826f752f';
 
   constructor(private http: HttpClient) {}
