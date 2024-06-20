@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { OmdbService } from './omdb.service';
@@ -14,7 +14,7 @@ import { OmdbService } from './omdb.service';
     BrowserModule,
     HttpClientModule  
   ],
-  providers: [OmdbService],  
+  providers: [OmdbService, provideHttpClient()],  
   bootstrap: []
 })
 

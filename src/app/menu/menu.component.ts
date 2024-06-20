@@ -21,18 +21,13 @@ export class MenuComponent implements OnInit {
   movies: any[] = [];
   movieTitle: string = '';
 
-  searchMovies(){
-    if (this.movieTitle == '') console.log("No input");
-    else console.log("Movies search: " +this.movieTitle);
-  }
-
   constructor(private omdbService: OmdbService) {}
 
   ngOnInit(): void {
     this.searchMovies();
   }
 
-  /*
+  
   searchMovies(): void {
     if (this.movieTitle.trim()) {
       this.omdbService.searchMoviesByTitle(this.movieTitle).subscribe(response => {
@@ -44,5 +39,5 @@ export class MenuComponent implements OnInit {
       });
     }
   }
-    */
+    
 }
