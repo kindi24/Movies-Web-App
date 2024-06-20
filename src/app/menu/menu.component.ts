@@ -5,11 +5,12 @@ import { HeaderComponent } from '../header/header.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { OmdbService } from '../omdb.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, FormsModule, CommonModule],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, FormsModule, CommonModule, HttpClientModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
@@ -25,8 +26,7 @@ export class MenuComponent implements OnInit {
     else console.log("Movies search: " +this.movieTitle);
   }
 
-  // Crashes app with this command
-  //constructor(private omdbService: OmdbService) {}
+  constructor(private omdbService: OmdbService) {}
 
   ngOnInit(): void {
     this.searchMovies();
