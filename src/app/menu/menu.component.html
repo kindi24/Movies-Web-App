@@ -35,7 +35,7 @@
                 <nav aria-label="Page navigation example" id="pagination" *ngIf="movies.length === 10">
                   <ul class="pagination justify-content-center">
                     <li class="page-item disabled">
-                      <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><b>Previous</b></a>
+                      <a class="page-link" tabindex="-1" id="previous" (click)="previousTenMovies()"><b>Previous</b></a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" id="next" (click)="nextTenMovies()"><b>Next</b></a>
@@ -83,7 +83,7 @@
               <nav aria-label="Page navigation example" id="pagination" *ngIf="movies.length === 10">
                 <ul class="pagination justify-content-center">
                   <li class="page-item disabled">
-                    <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><b>Previous</b></a>
+                    <a class="page-link" tabindex="-1" id="previous" (click)="previousTenMovies()"><b>Previous</b></a>
                   </li>
                   <li class="page-item">
                     <a class="page-link" id="next" (click)="nextTenMovies()"><b>Next</b></a>

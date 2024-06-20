@@ -20,6 +20,7 @@ export class MenuComponent implements OnInit {
   
   movies: any[] = [];
   movieTitle: string = '';
+  currentPage: number = 1;
 
   constructor(private omdbService: OmdbService) {}
 
@@ -30,7 +31,7 @@ export class MenuComponent implements OnInit {
   
   searchMovies(): void {
     if (this.movieTitle.trim()) {
-      this.omdbService.searchMoviesByTitle(this.movieTitle).subscribe(response => {
+      this.omdbService.searchMoviesByTitle(this.movieTitle, this.currentPage).subscribe(response => {
         if (response.Search) {
           this.movies = response.Search;
         } else {
@@ -41,11 +42,15 @@ export class MenuComponent implements OnInit {
   }
 
   previousTenMovies(): void {
-    console.log('previous 10');
+    if(this.currentPage > 1){
+      this.currentPage--;
+      this.searchMovies();
+    }
   }
 
   nextTenMovies(): void {
-    console.log('next 10');
+    this.currentPage++;
+    this.searchMovies();
   }
     
 }

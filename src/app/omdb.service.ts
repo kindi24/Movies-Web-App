@@ -15,8 +15,8 @@ export class OmdbService implements OnInit{
   
   constructor(private http: HttpClient) {}
 
-  searchMoviesByTitle(title: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}&s=${title}`);
+  searchMoviesByTitle(title: string, page: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}&s=${title}&page=${page}`);
   }
   
 }
