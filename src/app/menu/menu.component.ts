@@ -46,9 +46,11 @@ export class MenuComponent implements OnInit {
       this.currentPage--;
       this.searchMovies();
     }
+    if (this.currentPage === 1) console.log('Disable previous button');
   }
 
   nextTenMovies(): void {
+    if (this.currentPage === 1) console.log('Enable previous button');
     this.currentPage++;
     this.searchMovies();
   }
