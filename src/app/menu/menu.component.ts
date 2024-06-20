@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
   constructor(private omdbService: OmdbService) {}
 
   ngOnInit(): void {
-    this.searchMovies();
+
   }
 
   
