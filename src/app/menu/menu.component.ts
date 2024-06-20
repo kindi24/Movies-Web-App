@@ -39,5 +39,13 @@ export class MenuComponent implements OnInit {
       });
     }
   }
+
+  previousTenMovies(): void {
+    console.log('previous 10');
+  }
+
+  nextTenMovies(): void {
+    console.log('next 10');
+  }
     
 }
