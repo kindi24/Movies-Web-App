@@ -42,6 +42,7 @@ export class MenuComponent implements OnInit {
   }
 
   previousTenMovies(): void {
+    // if statement to check (currentPage === pageResult) then enable Next button
     if(this.currentPage > 1){
       this.currentPage--;
       this.searchMovies();
