@@ -31,13 +31,14 @@ export class MenuComponent implements OnInit {
   clickedSearch: boolean = false;
 
   searchMovies(): void {
-    this.clickedSearch = !this.clickedSearch;
     if (this.movieTitle.trim()) {
       this.omdbService.searchMoviesByTitle(this.movieTitle, this.currentPage).subscribe(response => {
         if (response.Search) {
           this.movies = response.Search;
+          this.clickedSearch = !this.clickedSearch;
         } else {
           this.movies = [];
+          this.clickedSearch = !this.clickedSearch;
         }
       });
     }

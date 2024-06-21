@@ -6,7 +6,7 @@
     background-color: lightgrey;
 }
 
-h3, h4{
+h2, h4{
     text-align: center;
 }
 
@@ -40,7 +40,18 @@ h3, h4{
 
 table{
     margin-top: 20px;
+}
+
+#tableD{
+    margin-left: 25%;
+    width: 50%;
+    height: 410px;
+}
+
+#tableM{
+    margin-left: 25%;
     width: 100%;
+    height: 480;
 }
 
 #pagination{
