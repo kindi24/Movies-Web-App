@@ -19,7 +19,7 @@
           
           @if (movies.length > 0){
             <div>
-              <table class="table" id="tableM" style="width: 100%;">
+              <table class="table" id="tableM" style="width: 100%; font-size: x-small;">
                 <thead>
                   <tr>
                     <th scope="col">Title</th>
@@ -28,7 +28,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let movie of movies">
-                    <td>{{ movie.Title }}</td>
+                    <td style="text-align: start;">{{ movie.Title }}</td>
                     <td style="text-align: end;">{{ movie.Year }}</td>
                   </tr>
                 </tbody>
@@ -37,11 +37,13 @@
                 <nav aria-label="Page navigation example" id="pagination" *ngIf="movies.length === 10 || currentPage != 1">
                   <ul class="pagination justify-content-center">
                     <li class="page-item">
-                      <a class="page-link" tabindex="-1" id="previous" (click)="previousTenMovies()"><b>Previous</b></a>
+                      <a class="page-link" tabindex="-1" id="previous" style="font-size: small;" (click)="previousTenMovies()"><b>Previous</b></a>
                     </li>
-                    {{currentPage}}
                     <li class="page-item">
-                      <a class="page-link" id="next" (click)="nextTenMovies()"><b>Next</b></a>
+                      <a class="page-link" style="font-size: small;">{{currentPage}}</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" id="next" style="font-size: small;" (click)="nextTenMovies()"><b>Next</b></a>
                     </li>
                   </ul>
                 </nav>
@@ -67,8 +69,8 @@
           </div>
 
           @if (movies.length > 0){
-            <div>
-              <table class="table" id="TableD">
+            <div style="width: 50%; margin-left: 25%;">
+              <table class="table" id="TableD" style="font-size: larger;">
                 <thead>
                   <tr>
                     <th scope="col">Title</th>
@@ -77,20 +79,22 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let movie of movies">
-                    <td>{{ movie.Title }}</td>
+                    <td style="text-align: start;">{{ movie.Title }}</td>
                     <td style="text-align: end;">{{ movie.Year }}</td>
                   </tr>
                 </tbody>
               </table>
   
-              <nav aria-label="Page navigation example" id="pagination" *ngIf="movies.length === 10 || currentPage != 1">
+              <nav aria-label="Page navigation example" id="pagination" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
                 <ul class="pagination justify-content-center">
                   <li class="page-item">
-                    <a class="page-link" tabindex="-1" id="previous" (click)="previousTenMovies()"><b>Previous</b></a>
+                    <a class="page-link" tabindex="-1" id="previous" (click)="previousTenMovies()" style="font-size: small;"><b>Previous</b></a>
                   </li>
-                  {{currentPage}}
                   <li class="page-item">
-                    <a class="page-link" id="next" (click)="nextTenMovies()"><b>Next</b></a>
+                    <a class="page-link" style="font-size: small;">{{currentPage}}</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" id="next" (click)="nextTenMovies()" style="font-size: small;"><b>Next</b></a>
                   </li>
                 </ul>
               </nav>
