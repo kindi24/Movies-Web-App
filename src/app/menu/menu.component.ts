@@ -21,8 +21,6 @@ export class MenuComponent implements OnInit {
   movies: any[] = [];
   movieTitle: string = '';
   currentPage: number = 1;
-  nextPage: number = 2;
-  moviesCheck: any[] = [];
 
   constructor(private omdbService: OmdbService) {}
 
@@ -52,7 +50,6 @@ export class MenuComponent implements OnInit {
 
   nextTenMovies(): void {
       this.currentPage++;
-      this.nextPage++;
       this.searchMovies();
   }
 }
