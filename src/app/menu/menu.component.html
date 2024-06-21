@@ -12,7 +12,7 @@
         <div class="input-group rounded">
             <input type="search" class="form-control rounded" placeholder="Search by Title" aria-label="Search" [(ngModel)]="movieTitle" name="movieTitle"
             aria-describedby="search-addon" style="width: 45%;"/>
-            <span class="input-group-text border-0" id="search-addon-M" (click)="searchMovies()">
+            <span class="input-group-text border-0" id="search-addon-M" (click)="firstSearchMovies()">
               <i class="fas fa-search" id="iconSearch"></i>
             </span>
           </div>
@@ -34,12 +34,12 @@
                 </tbody>
               </table>
 
-              <!--*ngIf="pagesResult === 1" to hsow or not the <nav>-->
                 <nav aria-label="Page navigation example" id="pagination" *ngIf="movies.length === 10 || currentPage != 1">
                   <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
+                    <li class="page-item">
                       <a class="page-link" tabindex="-1" id="previous" (click)="previousTenMovies()"><b>Previous</b></a>
                     </li>
+                    {{currentPage}}
                     <li class="page-item">
                       <a class="page-link" id="next" (click)="nextTenMovies()"><b>Next</b></a>
                     </li>
@@ -61,7 +61,7 @@
         <div class="input-group rounded" style="margin-left: 35%;">
             <input type="search" class="form-control rounded" placeholder="Search by Title" aria-label="Search" [(ngModel)]="movieTitle" name="movieTitle"
             aria-describedby="search-addon" style="width: 30%;"/>
-            <span class="input-group-text border-0" id="search-addon" (click)="searchMovies()">
+            <span class="input-group-text border-0" id="search-addon" (click)="firstSearchMovies()">
               <i class="fas fa-search" id="iconSearch"></i>
             </span>
           </div>
@@ -83,7 +83,6 @@
                 </tbody>
               </table>
   
-              <!--*ngIf="pagesResult === 1" to hsow or not the <nav>-->
               <nav aria-label="Page navigation example" id="pagination" *ngIf="movies.length === 10 || currentPage != 1">
                 <ul class="pagination justify-content-center">
                   <li class="page-item">
