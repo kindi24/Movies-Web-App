@@ -21,6 +21,8 @@ export class MenuComponent implements OnInit {
   movies: any[] = [];
   movieTitle: string = '';
   currentPage: number = 1;
+  nextPage: number = 2;
+  moviesCheck: any[] = [];
 
   constructor(private omdbService: OmdbService) {}
 
@@ -42,18 +44,15 @@ export class MenuComponent implements OnInit {
   }
 
   previousTenMovies(): void {
-    // if statement to check (currentPage === pageResult) then enable Next button
     if(this.currentPage > 1){
       this.currentPage--;
       this.searchMovies();
     }
-    if (this.currentPage === 1) console.log('Disable previous button');
   }
 
   nextTenMovies(): void {
-    if (this.currentPage === 1) console.log('Enable previous button');
-    this.currentPage++;
-    this.searchMovies();
+      this.currentPage++;
+      this.nextPage++;
+      this.searchMovies();
   }
-    
 }
