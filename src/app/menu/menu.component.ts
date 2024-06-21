@@ -28,8 +28,10 @@ export class MenuComponent implements OnInit {
 
   }
 
-  
+  clickedSearch: boolean = false;
+
   searchMovies(): void {
+    this.clickedSearch = !this.clickedSearch;
     if (this.movieTitle.trim()) {
       this.omdbService.searchMoviesByTitle(this.movieTitle, this.currentPage).subscribe(response => {
         if (response.Search) {
