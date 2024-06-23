@@ -11,5 +11,5 @@ import { HeaderComponent } from '../header/header.component';
   styleUrl: './settings.component.scss'
 })
 export class SettingsComponent {
-
+  checkWidth = window.innerWidth;
 }
