@@ -2,45 +2,72 @@ import { Component, OnInit} from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
-import { OmdbServiceComponent } from '../omdb-service/omdb-service.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { OmdbService } from '../omdb.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, OmdbServiceComponent, FormsModule, CommonModule],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, FormsModule, CommonModule, HttpClientModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
   checkWidth = window.innerWidth;
 
-  movieTitle: string = '';
   
   movies: any[] = [];
-  searchTitle: string = '';
+  movieTitle: string = '';
+  currentPage: number = 1;
 
-  searchMovies(){
-    if (this.movieTitle == '') console.log("No imput");
-    else console.log("Movies search: " +this.movieTitle);
-  }
-
-  /*
   constructor(private omdbService: OmdbService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
 
-  searchMovies(): void {
-    if (this.searchTitle.trim()) {
-      this.omdbService.searchMoviesByTitle(this.searchTitle).subscribe(response => {
+  }
+
+  clickedSearch: boolean = false;
+
+  firstSearchMovies(){
+    this.currentPage = 1;
+    if (this.movieTitle.trim()) {
+      this.omdbService.searchMoviesByTitle(this.movieTitle, this.currentPage).subscribe(response => {
         if (response.Search) {
           this.movies = response.Search;
+          this.clickedSearch = !this.clickedSearch;
         } else {
           this.movies = [];
+          this.clickedSearch = !this.clickedSearch;
         }
       });
     }
   }
-    */
+
+  searchMovies(): void {
+    if (this.movieTitle.trim()) {
+      this.omdbService.searchMoviesByTitle(this.movieTitle, this.currentPage).subscribe(response => {
+        if (response.Search) {
+          this.movies = response.Search;
+          this.clickedSearch = !this.clickedSearch;
+        } else {
+          this.movies = [];
+          this.clickedSearch = !this.clickedSearch;
+        }
+      });
+    }
+  }
+
+  previousTenMovies(): void {
+    if(this.currentPage > 1){
+      this.currentPage--;
+      this.searchMovies();
+    }
+  }
+
+  nextTenMovies(): void {
+      this.currentPage++;
+      this.searchMovies();
+  }
 }
