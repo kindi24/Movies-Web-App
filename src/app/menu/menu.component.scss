@@ -16,11 +16,6 @@
     background-color: whitesmoke;
 }
 
-h2, h4{
-    text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
 #containerTablets{
     padding: 10px;
     margin: 10px 0px 10px 0px;
@@ -49,6 +44,11 @@ h2, h4{
     margin-left: 25%;
 }
 
+h2, h4{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 table, thead, tbody{
     margin-top: 20px;
     border: 2px solid darkgray; 
@@ -70,7 +70,7 @@ tr {
 
 #tableM{
     width: 100%;
-    height: 480;
+    height: 480px;
 }
 
 #pagination{
