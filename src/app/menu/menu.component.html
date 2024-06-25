@@ -37,13 +37,13 @@
                 <nav aria-label="Page navigation example" id="pagination" *ngIf="movies.length === 10 || currentPage != 1">
                   <ul class="pagination justify-content-center">
                     <li class="page-item">
-                      <a class="page-link" tabindex="-1" id="previous" style="font-size: small;" (click)="previousTenMovies()"><b>Previous</b></a>
+                      <a class="page-link" tabindex="-1" style="font-size: small;" (click)="previousTenMovies()"><b><</b></a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" style="font-size: small;">{{currentPage}}</a>
+                      <a class="page-link" style="font-size: small;"><b>{{currentPage}}</b></a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" id="next" style="font-size: small;" (click)="nextTenMovies()"><b>Next</b></a>
+                      <a class="page-link" style="font-size: small;" (click)="nextTenMovies()"><b>></b></a>
                     </li>
                   </ul>
                 </nav>
@@ -88,13 +88,13 @@
               <nav aria-label="Page navigation example" id="pagination" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
                 <ul class="pagination justify-content-center">
                   <li class="page-item">
-                    <a class="page-link" tabindex="-1" id="previous" (click)="previousTenMovies()" style="font-size: small;"><b>Previous</b></a>
+                    <a class="page-link" tabindex="-1" (click)="previousTenMovies()" style="font-size: medium;"><b><</b></a>
                   </li>
                   <li class="page-item">
-                    <a class="page-link" style="font-size: small;">{{currentPage}}</a>
+                    <a class="page-link" style="font-size: medium;"><b>{{currentPage}}</b></a>
                   </li>
                   <li class="page-item">
-                    <a class="page-link" id="next" (click)="nextTenMovies()" style="font-size: small;"><b>Next</b></a>
+                    <a class="page-link" (click)="nextTenMovies()" style="font-size: medium;"><b>></b></a>
                   </li>
                 </ul>
               </nav>
