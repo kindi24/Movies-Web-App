@@ -19,7 +19,7 @@
           
           @if (movies.length > 0){
             <div>
-              <table class="table" id="tableM" style="width: 100%; font-size: x-small;">
+              <table class="table" id="tableM" style="width: 100%; font-size: x-small; height: 480px;">
                 <thead>
                   <tr>
                     <th scope="col">Title</th>
@@ -28,11 +28,12 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let movie of movies">
-                    <td style="text-align: start;">{{ movie.Title }}</td>
-                    <td style="text-align: end;">{{ movie.Year }}</td>
+                    <td style="text-align: start;"><b>{{ movie.Title }}</b></td>
+                    <td style="text-align: end;"><b>{{ movie.Year }}</b></td>
                   </tr>
                 </tbody>
               </table>
+            </div>
 
                 <nav aria-label="Page navigation example" id="pagination" *ngIf="movies.length === 10 || currentPage != 1">
                   <ul class="pagination justify-content-center">
@@ -46,9 +47,8 @@
                       <a class="page-link" style="font-size: small;" (click)="nextTenMovies()"><b>></b></a>
                     </li>
                   </ul>
-                </nav>
+                </nav>  
             
-            </div>
           } @else if (movies.length === 0 && movieTitle.trim() && clickedSearch) {
             <div>
               <p style="margin-top: 10%;"><b>No movies found.</b></p>
@@ -69,7 +69,7 @@
           </div>
 
           @if (movies.length > 0){
-            <div style="width: 50%; margin-left: 25%;">
+            <div style="width: 50%; margin-left: 25%; height: 480px;">
               <table class="table" id="TableD" style="font-size: larger;">
                 <thead>
                   <tr>
@@ -84,7 +84,7 @@
                   </tr>
                 </tbody>
               </table>
-  
+            </div>
               <nav aria-label="Page navigation example" id="pagination" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
                 <ul class="pagination justify-content-center">
                   <li class="page-item">
@@ -98,7 +98,7 @@
                   </li>
                 </ul>
               </nav>
-            </div>
+            
   
           }@else if (movies.length === 0 && movieTitle.trim() && clickedSearch) {
             <div>
