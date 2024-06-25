@@ -44,6 +44,10 @@ table, thead, tbody{
     border: 2px solid darkgray; 
 }
 
+th{
+    background-color: lightgrey;
+}
+
 #tableD{
     margin-left: 25%;
     width: 50%;
@@ -65,4 +69,8 @@ p{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-top: 10px;
     text-align: center;
+}
+
+nav{
+    cursor: pointer;
 }
