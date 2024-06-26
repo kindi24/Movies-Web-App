@@ -11,7 +11,7 @@
         <h4><b>{{ searchDesc }}</b></h4>
         <div class="input-group rounded" style="margin-left: 20%;">
             <input type="search" class="form-control rounded" placeholder="Search by Title" aria-label="Search" [(ngModel)]="movieTitle" name="movieTitle"
-            aria-describedby="search-addon" style="width: 45%;"/>
+            aria-describedby="search-addon" style="width: 45%;" (keydown.enter)="firstSearchMovies()"/>
             <span class="input-group-text border-0" id="search-addon-M" (click)="firstSearchMovies()">
               <i class="fas fa-search" id="iconSearch"></i>
             </span>
@@ -62,7 +62,7 @@
         <h2><b>{{ searchDesc }}</b></h2>
         <div class="input-group rounded" style="margin-left: 35%;">
             <input type="search" class="form-control rounded" placeholder="Search by Title" aria-label="Search" [(ngModel)]="movieTitle" name="movieTitle"
-            aria-describedby="search-addon" style="width: 30%;"/>
+            aria-describedby="search-addon" style="width: 30%;" (keydown.enter)="firstSearchMovies()"/>
             <span class="input-group-text border-0" id="search-addon" (click)="firstSearchMovies()">
               <i class="fas fa-search" id="iconSearch"></i>
             </span>
