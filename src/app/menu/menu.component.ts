@@ -17,6 +17,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class MenuComponent implements OnInit {
   checkWidth = window.innerWidth;
 
+  searchDesc: string = 'Find a movie by searching for the title';
   
   movies: any[] = [];
   movieTitle: string = '';

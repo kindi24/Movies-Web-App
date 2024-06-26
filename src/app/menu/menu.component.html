@@ -8,7 +8,7 @@
 @else if (checkWidth <= 768){
   <!--Mobile phones-->
     <div id="containerMobiles">
-        <h4><b>Find a movie by searching the title</b></h4>
+        <h4><b>{{ searchDesc }}</b></h4>
         <div class="input-group rounded" style="margin-left: 20%;">
             <input type="search" class="form-control rounded" placeholder="Search by Title" aria-label="Search" [(ngModel)]="movieTitle" name="movieTitle"
             aria-describedby="search-addon" style="width: 45%;"/>
@@ -59,7 +59,7 @@
 }@else {
     <!--Desktops-->
     <div id="container">
-        <h2><b>Find a movie by searching the title</b></h2>
+        <h2><b>{{ searchDesc }}</b></h2>
         <div class="input-group rounded" style="margin-left: 35%;">
             <input type="search" class="form-control rounded" placeholder="Search by Title" aria-label="Search" [(ngModel)]="movieTitle" name="movieTitle"
             aria-describedby="search-addon" style="width: 30%;"/>
