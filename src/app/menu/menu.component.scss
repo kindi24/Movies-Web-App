@@ -13,7 +13,9 @@
     margin: 10px 0px 10px 0px;
     max-width: 100%;
     height: 700px;
+    background-image: url('../../assets/images/cinema mobile.png');
     background-color: whitesmoke;
+    background-size: 100% 700px;
 }
 
 #containerTablets{
@@ -69,7 +71,7 @@ tr {
 }
 
 #tableM{
-    width: 100%;
+    width: 50%;
     height: 480px;
 }
 
