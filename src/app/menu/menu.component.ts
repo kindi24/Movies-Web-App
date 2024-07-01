@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
   movieTitle: string = '';
   currentPage: number = 1;
 
-  constructor(private omdbService: OmdbService) {}
+  constructor(private omdbService: OmdbService, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -77,8 +77,6 @@ export class MenuComponent implements OnInit {
   }
 
   showMovieData(movie: Movie): void {
-    // Check
-    console.log(movie);
-    //this.router.navigate(['/movie'], {state: {data:movie}});
+    this.router.navigate(['/movie'], {state: {data:movie}});
   }
 }
