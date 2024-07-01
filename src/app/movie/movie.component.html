@@ -1,0 +1,17 @@
+<app-header></app-header>
+@if (checkWidth >1024){
+    <div id="container">
+        <p>settings works!</p>
+    </div>
+}
+@else if (checkWidth <= 768) {
+    <div id="containerMobiles">
+        <p>settings works!</p>
+    </div>
+}
+@else {
+    <div id="containerTablets">
+        <p>settings works!</p>
+    </div>
+}
+<app-footer></app-footer>
