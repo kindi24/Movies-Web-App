@@ -73,4 +73,7 @@ export class MenuComponent implements OnInit {
         this.searchMovies();
       }
   }
+
+  showMovieData(): void {
+  }
 }

@@ -27,7 +27,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let movie of movies">
+                  <tr *ngFor="let movie of movies" (click)="showMovieData()">
                     <td style="text-align: start;"><b>{{ movie.Title }}</b></td>
                     <td style="text-align: end;"><b>{{ movie.Year }}</b></td>
                   </tr>
@@ -78,7 +78,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let movie of movies" style="cursor: pointer;">
+                  <tr *ngFor="let movie of movies" style="cursor: pointer;" (click)="showMovieData()">
                     <td style="text-align: start;">{{ movie.Title }}</td>
                     <td style="text-align: end;">{{ movie.Year }}</td>
                   </tr>
