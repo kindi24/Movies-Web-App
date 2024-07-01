@@ -11,8 +11,8 @@
           </div>
       
           <div class="dropdown-container">
-            <img [src]="profilePhoto" (click)="profileContent()">
-            <div *ngIf="profileVisible" class="dropdown-menu" style="font-size: small;">
+            <img [src]="profilePhoto" style="margin-left: 150px;" (click)="profileContent()">
+            <div *ngIf="profileVisible" class="dropdown-menu" style="font-size: medium;">
               <a (click)="myAccount()">My account</a>
               <a (click)="logout()">Logout</a>
             </div>
