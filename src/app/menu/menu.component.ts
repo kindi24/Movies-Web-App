@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { OmdbService } from '../omdb.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Movie } from '../movie';
 
 @Component({
   selector: 'app-menu',
@@ -74,6 +75,8 @@ export class MenuComponent implements OnInit {
       }
   }
 
-  showMovieData(): void {
+  showMovieData(movie: Movie): void {
+    // Check
+    console.log(movie);
   }
 }
