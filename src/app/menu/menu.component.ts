@@ -5,8 +5,9 @@ import { HeaderComponent } from '../header/header.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { OmdbService } from '../omdb.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Movie } from '../movie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -78,5 +79,6 @@ export class MenuComponent implements OnInit {
   showMovieData(movie: Movie): void {
     // Check
     console.log(movie);
+    //this.router.navigate(['/movie'], {state: {data:movie}});
   }
 }

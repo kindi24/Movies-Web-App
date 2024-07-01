@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MenuRoutingModule } from './menu-routing.module';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MovieModule } from '../movie/movie.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CommonModule,
     MenuRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MovieModule
   ]
 })
 export class MenuModule { }
