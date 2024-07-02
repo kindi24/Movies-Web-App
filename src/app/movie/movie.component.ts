@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterLink } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie',
@@ -12,19 +13,19 @@ import { CommonModule } from '@angular/common';
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss'
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent {
   checkWidth = window.innerWidth;
+
+  constructor(private router: Router) {}
 
   title = history.state.data.Title;
   year = history.state.data.Year;
   poster = history.state.data.Poster;
   type = history.state.data.Type;
-  imdbID = history.state.data.imbdID;
 
+  posterSource = document.getElementById("poster") as HTMLImageElement;
 
-  ngOnInit(): void {
-    //this.project = window.history.state.data;
-    console.log(history.state.data);
-    console.log(history.state.data.Title);
+  returnMenu(): void {
+    this.router.navigate(['/menu']);
   }
 }
