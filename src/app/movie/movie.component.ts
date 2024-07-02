@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterLink } from '@angular/router';
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss'
 })
-export class MovieComponent {
+export class MovieComponent implements OnInit{
   checkWidth = window.innerWidth;
 
   constructor(private router: Router) {}
@@ -23,7 +23,9 @@ export class MovieComponent {
   poster = history.state.data.Poster;
   type = history.state.data.Type;
 
-  posterSource = document.getElementById("poster") as HTMLImageElement;
+  ngOnInit(): void {
+    if(this.poster == 'N/A') this.poster = "../../assets/images/noImage.png";
+  }
 
   returnMenu(): void {
     this.router.navigate(['/menu']);
