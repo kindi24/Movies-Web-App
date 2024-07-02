@@ -1,6 +1,6 @@
 <app-header></app-header>
 <!--Tablets-->
-@if (checkWidth > 768 && checkWidth <=1024){
+@if (checkWidth > 768 && checkWidth <=1024) {
     <div id="containerTablets">
         <p>menu works!</p>
     </div>
@@ -58,8 +58,8 @@
     </div>
 }@else {
     <!--Desktops-->
-    <div id="container">
-        <h2><b style="font-size: x-large;">{{ searchDesc }}</b></h2>
+    <div id="containerDesktops">
+        <h2>{{ searchDesc }}</h2>
         <div class="input-group rounded" style="margin-left: 35%; width: 30%">
             <input type="search" class="form-control rounded" placeholder="Search by Title" aria-label="Search" [(ngModel)]="movieTitle" name="movieTitle"
             aria-describedby="search-addon" (keydown.enter)="firstSearchMovies()" style="font-size: 15px;"/>
