@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterLink } from '@angular/router';
@@ -12,6 +12,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss'
 })
-export class MovieComponent {
+export class MovieComponent implements OnInit {
   checkWidth = window.innerWidth;
+
+  ngOnInit(): void {
+    //this.project = window.history.state.data;
+    console.log(history.state.data);
+    console.log(history.state.data.Title);
+  }
 }
