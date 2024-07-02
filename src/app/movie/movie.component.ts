@@ -15,6 +15,13 @@ import { CommonModule } from '@angular/common';
 export class MovieComponent implements OnInit {
   checkWidth = window.innerWidth;
 
+  title = history.state.data.Title;
+  year = history.state.data.Year;
+  poster = history.state.data.Poster;
+  type = history.state.data.Type;
+  imdbID = history.state.data.imbdID;
+
+
   ngOnInit(): void {
     //this.project = window.history.state.data;
     console.log(history.state.data);
