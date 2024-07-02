@@ -16,6 +16,8 @@
 #imgD{
   width: 300px;
   height: 426px;
+  border: 5px solid black; 
+  padding: 3px;
 }
 
 #infoMovieD{
@@ -43,6 +45,37 @@
   height: 700px;
   background-color: whitesmoke;
   background-size: 100% 700px;
+}
+
+#movieContentM{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#imgM{
+  width: 200px;
+  height: 326px;
+  border: 5px solid black; 
+  padding: 3px;
+}
+
+#infoMovieM{
+  margin-left: 10px;
+
+  p{
+    font-size: small;
+    font-weight: bold;
+  }
+}
+
+#returnM{
+  margin-left: 38%; 
+  margin-top: 70px;
+  width: 85px;
+  height: 45px;
+  font-weight: bold;
+  font-size: large;
 }
 
 #containerTablets{
