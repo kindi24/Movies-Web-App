@@ -27,7 +27,10 @@ export class MovieComponent implements OnInit{
     if(this.poster == 'N/A') this.poster = "../../assets/images/noImage.png";
   }
 
+  movieTitle = window.history.state.title;
+  currentPage = window.history.state.page;
+
   returnMenu(): void {
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/menu'], {state: {searchTitle: this.movieTitle, page: this.currentPage}});
   }
 }

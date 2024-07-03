@@ -8,6 +8,7 @@ import { OmdbService } from '../omdb.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Movie } from '../movie';
 import { Router } from '@angular/router';
+import { title } from 'node:process';
 
 @Component({
   selector: 'app-menu',
@@ -27,8 +28,19 @@ export class MenuComponent implements OnInit {
 
   constructor(private omdbService: OmdbService, private router: Router) {}
 
-  ngOnInit(): void {
+  // When user returns from movie to menu component
+  searchTitle = window.history.state.searchTitle;
+  page = window.history.state.page;
 
+  ngOnInit(): void {
+    if (this.searchTitle != undefined && this.searchTitle != ''){
+      this.currentPage = this.page;
+      this.movieTitle = this.searchTitle;
+      this.omdbService.searchMoviesByTitle(this.searchTitle, this.currentPage).subscribe(response => {
+          this.movies = response.Search;     
+      });
+    }
+    this.searchTitle = '';
   }
 
   clickedSearch: boolean = false;
@@ -77,6 +89,6 @@ export class MenuComponent implements OnInit {
   }
 
   showMovieData(movie: Movie): void {
-    this.router.navigate(['/movie'], {state: {data:movie}});
+    this.router.navigate(['/movie'], {state: {data:movie, title:this.movieTitle, page:this.currentPage}});
   }
 }
