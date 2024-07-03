@@ -4,9 +4,8 @@
         <div id="movieContentD">
             <img [src]="poster" id="imgD">
             <div id="infoMovieD">
-                <p>{{title}}</p>
-                <p>Year: {{year}}</p>
-                <p>Type: {{type}}</p>
+                <h1>{{title}}</h1>
+                <p>Year: {{year}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type: {{type}}</p>
             </div>
         </div>
         <button class="btn btn-lg btn-success" id="returnD" type="submit" (click)="returnMenu()">Return</button>
@@ -17,9 +16,8 @@
         <div id="movieContentM">
             <img [src]="poster" id="imgM" style="border: 5px solid black; padding: 3px;">
             <div id="infoMovieM">
-                <p>{{title}}</p>
-                <p>Year: {{year}}</p>
-                <p>Type: {{type}}</p>
+                <h2>{{title}}</h2>
+                <p>Year: {{year}} &nbsp;&nbsp; Type: {{type}}</p>
             </div>
         </div>
         <button class="btn btn-lg btn-success" id="returnM" type="submit" (click)="returnMenu()">Return</button>
