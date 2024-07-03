@@ -35,16 +35,22 @@
               </table>
             </div>
 
-                <nav aria-label="Page navigation example" id="pagination" *ngIf="movies.length === 10 || currentPage != 1">
+                <nav aria-label="Page navigation example" id="paginationM" *ngIf="movies.length === 10 || currentPage != 1">
                   <ul class="pagination justify-content-center">
                     <li class="page-item">
-                      <a class="page-link" tabindex="-1" style="font-size: small;" (click)="previousTenMovies()"><b><</b></a>
+                      <a class="page-link" tabindex="-1" (click)="firstPage()"><b>|<</b></a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" style="font-size: small; border-right: 2px solid black; border-left: 1px solid black;"><b>{{currentPage}}</b></a>
+                      <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><b><</b></a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" style="font-size: small;" (click)="nextTenMovies()"><b>></b></a>
+                      <a class="page-link" style="border-right: 2px solid black; border-left: 1px solid black;"><b>{{currentPage}}</b></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" (click)="nextTenMovies()"><b>></b></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" tabindex="-1" (click)="lastPage()"><b>>|</b></a>
                     </li>
                   </ul>
                 </nav>  
@@ -85,16 +91,22 @@
                 </tbody>
               </table>
             </div>
-              <nav aria-label="Page navigation example" id="pagination" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
+              <nav aria-label="Page navigation example" id="paginationD" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
                 <ul class="pagination justify-content-center" style="margin-left: 5%;">
                   <li class="page-item">
-                    <a class="page-link" tabindex="-1" (click)="previousTenMovies()" style="font-size: medium;"><b><</b></a>
+                    <a class="page-link" tabindex="-1" (click)="firstPage()"><b>|<</b></a>
                   </li>
                   <li class="page-item">
-                    <a class="page-link" style="font-size: medium; border-right: 2px solid black;  border-left: 1px solid black;"><b>{{currentPage}}</b></a>
+                    <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><b><</b></a>
                   </li>
                   <li class="page-item">
-                    <a class="page-link" (click)="nextTenMovies()" style="font-size: medium;"><b>></b></a>
+                    <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;"><b>{{currentPage}}</b></a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" (click)="nextTenMovies()"><b>></b></a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" tabindex="-1" (click)="lastPage()"><b>>|</b></a>
                   </li>
                 </ul>
               </nav>

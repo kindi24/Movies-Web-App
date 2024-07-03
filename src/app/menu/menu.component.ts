@@ -35,9 +35,7 @@ export class MenuComponent implements OnInit {
     if (this.searchTitle != undefined && this.searchTitle != ''){
       this.currentPage = this.page;
       this.movieTitle = this.searchTitle;
-      this.omdbService.searchMoviesByTitle(this.searchTitle, this.currentPage).subscribe(response => {
-          this.movies = response.Search;     
-      });
+      this.searchMovies();
     }
     this.searchTitle = '';
   }
@@ -78,6 +76,11 @@ export class MenuComponent implements OnInit {
     }
   }
 
+  firstPage(): void {
+    this.currentPage = 1;
+    this.searchMovies();
+  }
+
   previousTenMovies(): void {
     if(this.currentPage > 1){
       this.currentPage--;
@@ -90,6 +93,10 @@ export class MenuComponent implements OnInit {
         this.currentPage++;
         this.searchMovies();
       }
+  }
+
+  lastPage(): void {
+
   }
 
   showMovieData(movie: Movie): void {
