@@ -104,7 +104,7 @@ export class MenuComponent implements OnInit {
   }
 
   nextTenMovies(): void {
-      if (this.movies.length === 10){
+      if (this.currentPage < this.totalPages){
         this.currentPage++;
         this.searchMovies();
       }
