@@ -97,13 +97,13 @@
                     <a class="page-link" tabindex="-1" (click)="firstPage()"><b>|<</b></a>
                   </li>
                   <li class="page-item">
-                    <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><b><</b></a>
+                    <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><b><</b></a>
                   </li>
                   <li class="page-item">
                     <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;"><b>{{currentPage}}</b></a>
                   </li>
                   <li class="page-item">
-                    <a class="page-link" (click)="nextTenMovies()"><b>></b></a>
+                    <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()"><b>></b></a>
                   </li>
                   <li class="page-item">
                     <a class="page-link" tabindex="-1" (click)="lastPage()"><b>>|</b></a>
