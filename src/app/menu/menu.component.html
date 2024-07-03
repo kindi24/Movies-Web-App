@@ -42,7 +42,7 @@
                         <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                        <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><</a>
                       </li>
                       <li class="page-item" [ngClass]="{'active': currentPage === 1}">
                         <a class="page-link" (click)="goToPage(1)">1</a>
@@ -54,13 +54,13 @@
                         <a class="page-link" (click)="goToPage(3)">3</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link" style="border-right: 2px solid black;">...</a>
+                        <a class="page-link">...</a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                        <a class="page-link" (click)="nextTenMovies()">></a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
@@ -75,13 +75,13 @@
                         <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                        <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><</a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" (click)="goToPage(1)">1</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link" style="border-left: 1px solid black;">...</a>
+                        <a class="page-link">...</a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" (click)="goToPage(currentPage - 1)">{{currentPage - 1}}</a>
@@ -93,13 +93,13 @@
                         <a class="page-link" (click)="goToPage(currentPage + 1)">{{currentPage + 1}}</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link" style="border-right: 2px solid black;">...</a>
+                        <a class="page-link">...</a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                        <a class="page-link" (click)="nextTenMovies()">></a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
@@ -114,13 +114,13 @@
                         <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                        <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><</a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" (click)="goToPage(1)">1</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link" style="border-left: 1px solid black;">...</a>
+                        <a class="page-link">...</a>
                       </li>
                       <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 2}">
                         <a class="page-link" (click)="goToPage(totalPages - 2)">{{totalPages - 2}}</a>
@@ -132,7 +132,7 @@
                         <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                        <a class="page-link" (click)="nextTenMovies()">></a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
@@ -184,7 +184,7 @@
                       <a class="page-link" tabindex="-1" (click)="firstPage()"><b>|<</b></a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                      <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><</a>
                     </li>
                     <li class="page-item" [ngClass]="{'active': currentPage === 1}">
                       <a class="page-link" (click)="goToPage(1)">1</a>
@@ -196,13 +196,13 @@
                       <a class="page-link" (click)="goToPage(3)">3</a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">...</a>
+                      <a class="page-link">...</a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                      <a class="page-link" (click)="nextTenMovies()">></a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
@@ -217,13 +217,13 @@
                       <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                      <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><</a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" (click)="goToPage(1)">1</a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">...</a>
+                      <a class="page-link">...</a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" (click)="goToPage(currentPage - 1)">{{currentPage - 1}}</a>
@@ -235,13 +235,13 @@
                       <a class="page-link" (click)="goToPage(currentPage + 1)">{{currentPage + 1}}</a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">...</a>
+                      <a class="page-link">...</a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                      <a class="page-link" (click)="nextTenMovies()">></a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
@@ -256,13 +256,13 @@
                       <a class="page-link" tabindex="-1" (click)="firstPage()"><b>|<</b></a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                      <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><</a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" (click)="goToPage(1)">1</a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">...</a>
+                      <a class="page-link">...</a>
                     </li>
                     <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 2}">
                       <a class="page-link" (click)="goToPage(totalPages - 2)">{{totalPages - 2}}</a>
@@ -274,7 +274,7 @@
                       <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
                     </li>
                     <li class="page-item">
-                      <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                      <a class="page-link" (click)="nextTenMovies()">></a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
