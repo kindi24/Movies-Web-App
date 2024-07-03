@@ -115,6 +115,11 @@ export class MenuComponent implements OnInit {
     this.searchMovies();
   }
 
+  goToPage(page: number): void {
+    this.currentPage = page;
+    this.searchMovies();
+  }
+
   showMovieData(movie: Movie): void {
     this.router.navigate(['/movie'], {state: {data:movie, title:this.movieTitle, page:this.currentPage, total: this.totalPages}});
   }
