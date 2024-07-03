@@ -35,25 +35,111 @@
               </table>
             </div>
 
-                <nav aria-label="Page navigation example" id="paginationM" *ngIf="movies.length === 10 || currentPage != 1">
-                  <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                      <a class="page-link" tabindex="-1" (click)="firstPage()"><b>|<</b></a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><b><</b></a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" style="border-right: 2px solid black; border-left: 1px solid black;"><b>{{currentPage}}</b></a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" (click)="nextTenMovies()"><b>></b></a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" tabindex="-1" (click)="lastPage()"><b>>|</b></a>
-                    </li>
-                  </ul>
-                </nav>  
+                @if (currentPage <= 3){
+                  <nav aria-label="Page navigation example" id="paginationM" *ngIf="movies.length === 10 || currentPage != 1">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === 1}">
+                        <a class="page-link" style="border-left: 1px solid black;">1</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === 2}">
+                        <a class="page-link" style="border-right: 2px solid black; border-left: 1px solid black;">2</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === 3}">
+                        <a class="page-link" style="border-right: 2px solid black;">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-right: 2px solid black;">...</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-right: 2px solid black;">{{totalPages}}</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
+                      </li>
+                    </ul>
+                  </nav>
+                }
+                @else if (currentPage > 3 && currentPage < totalPages - 2){
+                  <nav aria-label="Page navigation example" id="paginationM" *ngIf="movies.length === 10 || currentPage != 1">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-left: 1px solid black;">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-left: 1px solid black;">...</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-left: 1px solid black;">{{currentPage - 1}}</a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link" style="border-right: 2px solid black; border-left: 1px solid black;">{{currentPage}}</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-right: 2px solid black;">{{currentPage + 1}}</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-right: 2px solid black;">...</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-right: 2px solid black;">{{totalPages}}</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
+                      </li>
+                    </ul>
+                  </nav>
+                }
+                @else{
+                  <nav aria-label="Page navigation example" id="paginationM" *ngIf="movies.length === 10 || currentPage != 1">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-left: 1px solid black;">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-left: 1px solid black;">...</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 2}">
+                        <a class="page-link" style="border-left: 1px solid black;">{{totalPages - 2}}</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 1}">
+                        <a class="page-link" style="border-right: 2px solid black; border-left: 1px solid black;">{{totalPages - 1}}</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === totalPages}">
+                        <a class="page-link" style="border-right: 2px solid black;">{{totalPages}}</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
+                      </li>
+                    </ul>
+                  </nav>
+                }  
             
           } @else if (movies.length === 0 && movieTitle.trim() && clickedSearch) {
             <div>
@@ -91,25 +177,111 @@
                 </tbody>
               </table>
             </div>
-              <nav aria-label="Page navigation example" id="paginationD" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
-                <ul class="pagination justify-content-center" style="margin-left: 5%;">
-                  <li class="page-item">
-                    <a class="page-link" tabindex="-1" (click)="firstPage()"><b>|<</b></a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><b><</b></a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;"><b>{{currentPage}}</b></a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()"><b>></b></a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" tabindex="-1" (click)="lastPage()"><b>>|</b></a>
-                  </li>
-                </ul>
-              </nav>
+              @if (currentPage <= 3){
+                <nav aria-label="Page navigation example" id="paginationD" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
+                  <ul class="pagination justify-content-center" style="margin-left: 5%;">
+                    <li class="page-item">
+                      <a class="page-link" tabindex="-1" (click)="firstPage()"><b>|<</b></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === 1}">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">1</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === 2}">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">2</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === 3}">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">...</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">{{totalPages}}</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
+                    </li>
+                  </ul>
+                </nav>
+              }
+              @else if (currentPage > 3 && currentPage < totalPages - 2){
+                <nav aria-label="Page navigation example" id="paginationD" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
+                  <ul class="pagination justify-content-center" style="margin-left: 5%;">
+                    <li class="page-item">
+                      <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">...</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">{{currentPage - 1}}</a>
+                    </li>
+                    <li class="page-item active">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">{{currentPage}}</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">{{currentPage + 1}}</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">...</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">{{totalPages}}</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
+                    </li>
+                  </ul>
+                </nav>
+              }
+              @else {
+                <nav aria-label="Page navigation example" id="paginationD" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
+                  <ul class="pagination justify-content-center" style="margin-left: 5%;">
+                    <li class="page-item">
+                      <a class="page-link" tabindex="-1" (click)="firstPage()"><b>|<</b></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" tabindex="-1" style="border-left: 1px solid black;" (click)="previousTenMovies()"><</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">...</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 2}">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">{{totalPages - 2}}</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 1}">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">{{totalPages - 1}}</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === totalPages}">
+                      <a class="page-link" style="border-right: 2px solid black;  border-left: 1px solid black;">{{totalPages}}</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" style="border-right: 2px solid black;" (click)="nextTenMovies()">></a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
+                    </li>
+                  </ul>
+                </nav>
+              }
             
   
           }@else if (movies.length === 0 && movieTitle.trim() && clickedSearch) {

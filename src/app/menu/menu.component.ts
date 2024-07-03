@@ -23,8 +23,8 @@ export class MenuComponent implements OnInit {
   movies: any[] = [];
   movieTitle: string = '';
   currentPage: number = 1;
-  totalResults: number | undefined;
-  totalPages: number | undefined;
+  totalResults: number = 0;
+  totalPages: number = 0;
 
   constructor(private omdbService: OmdbService, private router: Router) {}
 
@@ -109,7 +109,8 @@ export class MenuComponent implements OnInit {
   }
 
   lastPage(): void {
-
+    this.currentPage = this.totalPages;
+    this.searchMovies();
   }
 
   showMovieData(movie: Movie): void {
