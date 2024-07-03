@@ -23,6 +23,8 @@ export class MenuComponent implements OnInit {
   movies: any[] = [];
   movieTitle: string = '';
   currentPage: number = 1;
+  totalResults: number | undefined;
+  totalPages: number | undefined;
 
   constructor(private omdbService: OmdbService, private router: Router) {}
 
@@ -59,6 +61,17 @@ export class MenuComponent implements OnInit {
           this.clickedSearch = !this.clickedSearch;
         }
       });
+
+      this.omdbService.getTotalResults(this.movieTitle, this.currentPage).subscribe(
+        (results: number) => {
+          this.totalResults = results;
+          this.totalPages = Math.ceil(this.totalResults / 10);
+          console.log(this.totalPages);
+        },
+        (error) => {
+          console.error('Error fetching total results:', error);
+        }
+      );
     }
   }
 
