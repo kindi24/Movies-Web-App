@@ -35,8 +35,9 @@ export class MovieComponent implements OnInit {
 
   movieTitle = window.history.state.title;
   currentPage = window.history.state.page;
+  totalPages = window.history.state.total;
 
   returnMenu(): void {
-    this.router.navigate(['/menu'], {state: {searchTitle: this.movieTitle, page: this.currentPage}});
+    this.router.navigate(['/menu'], {state: {searchTitle: this.movieTitle, page: this.currentPage, total: this.totalPages}});
   }
 }

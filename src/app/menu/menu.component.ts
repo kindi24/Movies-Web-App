@@ -31,12 +31,14 @@ export class MenuComponent implements OnInit {
   // When user returns from movie to menu component
   searchTitle = window.history.state.searchTitle;
   page = window.history.state.page;
+  total = window.history.state.total;
 
   ngOnInit(): void {
     this.checkWidth = window.innerWidth;
     if (this.searchTitle != undefined && this.searchTitle != ''){
       this.currentPage = this.page;
       this.movieTitle = this.searchTitle;
+      this.totalPages = this.total;
       this.searchMovies();
     }
     this.searchTitle = '';
@@ -114,6 +116,6 @@ export class MenuComponent implements OnInit {
   }
 
   showMovieData(movie: Movie): void {
-    this.router.navigate(['/movie'], {state: {data:movie, title:this.movieTitle, page:this.currentPage}});
+    this.router.navigate(['/movie'], {state: {data:movie, title:this.movieTitle, page:this.currentPage, total: this.totalPages}});
   }
 }
