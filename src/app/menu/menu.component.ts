@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, HostListener} from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
@@ -8,7 +8,6 @@ import { OmdbService } from '../omdb.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Movie } from '../movie';
 import { Router } from '@angular/router';
-import { title } from 'node:process';
 
 @Component({
   selector: 'app-menu',
@@ -18,10 +17,9 @@ import { title } from 'node:process';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent implements OnInit {
-  checkWidth = window.innerWidth;
 
-  searchDesc: string = 'Find a movie by searching for the title';
-  
+  public checkWidth: any;
+  searchDesc: string = 'Find a movie by searching for the title';  
   movies: any[] = [];
   movieTitle: string = '';
   currentPage: number = 1;
@@ -33,6 +31,7 @@ export class MenuComponent implements OnInit {
   page = window.history.state.page;
 
   ngOnInit(): void {
+    this.checkWidth = window.innerWidth;
     if (this.searchTitle != undefined && this.searchTitle != ''){
       this.currentPage = this.page;
       this.movieTitle = this.searchTitle;
@@ -41,6 +40,11 @@ export class MenuComponent implements OnInit {
       });
     }
     this.searchTitle = '';
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkWidth = window.innerWidth;
   }
 
   clickedSearch: boolean = false;

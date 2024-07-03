@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterLink } from '@angular/router';
@@ -13,10 +13,15 @@ import { Router } from '@angular/router';
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss'
 })
-export class MovieComponent implements OnInit{
-  checkWidth = window.innerWidth;
+export class MovieComponent implements OnInit {
 
   constructor(private router: Router) {}
+
+  public checkWidth: any;
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkWidth = window.innerWidth;
+  }
 
   title = history.state.data.Title;
   year = history.state.data.Year;
@@ -24,6 +29,7 @@ export class MovieComponent implements OnInit{
   type = history.state.data.Type;
 
   ngOnInit(): void {
+    this.checkWidth = window.innerWidth;
     if(this.poster == 'N/A') this.poster = "../../assets/images/noImage.png";
   }
 
