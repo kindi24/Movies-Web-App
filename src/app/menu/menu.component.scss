@@ -31,15 +31,12 @@
 #paginationD{
     justify-content: center;
     display: flex;
+}
 
-    a{
-        font-size: medium;
-        text-align: center;
-    }
-
-    #pagesD li, a{
-        width: 55.25px;
-    }
+li, a{
+    font-size: medium;
+    text-align: center;
+    width: 100%
 }
 
 #containerMobiles{
