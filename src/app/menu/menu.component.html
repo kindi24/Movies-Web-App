@@ -18,7 +18,7 @@
           </div>
           
           @if (movies.length > 0){
-            <div style="width: 100%; height: 480px;">
+            <div style="width: 100%; height: 540px;">
               <table class="table table-striped table-hover" id="tableM" style="font-size: small;">
                 <thead>
                   <tr>
@@ -36,7 +36,7 @@
             </div>
 
               <nav aria-label="Page navigation example" id="paginationM" *ngIf="movies.length === 10 || currentPage != 1">
-                <ul class="pagination justify-content-center">
+                <ul class="pagination justify-content-center" style="margin-right: 3px; width: 150px;">
                 <li class="page-item">
                   <a class="page-link" tabindex="-1" (click)="goToPage(1)">|<</a>
                 </li>
@@ -44,64 +44,63 @@
                   <a class="page-link" tabindex="-1" (click)="goToPage(currentPage - 1)"><</a>
                 </li>
                 </ul>
+
+               <div style="width: 188px;">
+                <ul class="pagination justify-content-center">
                 @if (currentPage <= 3){
-                    <ul class="pagination justify-content-center" style="margin-left: 5px;">
-                      <li class="page-item" [ngClass]="{'active': currentPage === 1}">
-                        <a class="page-link" (click)="goToPage(1)">1</a>
-                      </li>
-                      <li class="page-item" [ngClass]="{'active': currentPage === 2}">
-                        <a class="page-link" (click)="goToPage(2)">2</a>
-                      </li>
-                      <li class="page-item" [ngClass]="{'active': currentPage === 3}">
-                        <a class="page-link" (click)="goToPage(3)">3</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link">.</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
-                      </li>
-                    </ul>
-                }
-                @else if (currentPage > 3 && currentPage < totalPages - 2){
-                    <ul class="pagination justify-content-center" style="margin-left: 5px;">
-                      <li class="page-item">
-                        <a class="page-link" (click)="goToPage(1)">1</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link">.</a>
-                      </li>
-                      <li class="page-item active">
-                        <a class="page-link" (click)="goToPage(currentPage)">{{currentPage}}</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link">.</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
-                      </li>
-                    </ul>
-                }
-                @else{
-                    <ul class="pagination justify-content-center" style="margin-left: 5px;">
-                      <li class="page-item">
-                        <a class="page-link" (click)="goToPage(1)">1</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link">.</a>
-                      </li>
-                      <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 2}">
-                        <a class="page-link" (click)="goToPage(totalPages - 2)">{{totalPages - 2}}</a>
-                      </li>
-                      <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 1}">
-                        <a class="page-link" (click)="goToPage(totalPages - 1)">{{totalPages - 1}}</a>
-                      </li>
-                      <li class="page-item" [ngClass]="{'active': currentPage === totalPages}">
-                        <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
-                      </li>
-                    </ul>
-                }
-                <ul class="pagination justify-content-center" style="margin-left: 5px;">
+                    <li class="page-item" [ngClass]="{'active': currentPage === 1}">
+                      <a class="page-link" (click)="goToPage(1)">1</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === 2}">
+                      <a class="page-link" (click)="goToPage(2)">2</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === 3}">
+                      <a class="page-link" (click)="goToPage(3)">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link">.</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
+                    </li>
+              }
+              @else if (currentPage > 3 && currentPage < totalPages - 2){
+                    <li class="page-item">
+                      <a class="page-link" (click)="goToPage(1)">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link">.</a>
+                    </li>
+                    <li class="page-item active">
+                      <a class="page-link" (click)="goToPage(currentPage)">{{currentPage}}</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link">.</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
+                    </li>
+              }
+              @else{
+                    <li class="page-item">
+                      <a class="page-link" (click)="goToPage(1)">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link">.</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 2}">
+                      <a class="page-link" (click)="goToPage(totalPages - 2)">{{totalPages - 2}}</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 1}">
+                      <a class="page-link" (click)="goToPage(totalPages - 1)">{{totalPages - 1}}</a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'active': currentPage === totalPages}">
+                      <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
+                    </li>
+              }
+                </ul>
+               </div>
+                <ul class="pagination justify-content-center" style="margin-left: 3px; width: 150px;">
                   <li class="page-item">
                     <a class="page-link" (click)="goToPage(currentPage + 1)">></a>
                   </li>

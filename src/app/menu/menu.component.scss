@@ -31,22 +31,23 @@
 #paginationD{
     justify-content: center;
     display: flex;
+
+    li, a{
+        font-size: medium;
+        text-align: center;
+        width: 100%
+    }
 }
 
-li, a{
-    font-size: medium;
-    text-align: center;
-    width: 100%
-}
 
 #containerMobiles{
     padding: 10px;
     margin: 10px 0px 10px 0px;
     max-width: 100%;
-    height: 700px;
+    height: 720px;
     background-image: url('../../assets/images/cinema mobile.png');
     background-color: whitesmoke;
-    background-size: 100% 700px;
+    background-size: 100% 720px;
 }
 
 #search-addon-M{
@@ -61,8 +62,10 @@ li, a{
     justify-content: center;
     display: flex;
 
-    a{
+    li, a{
         font-size: x-small;
+        text-align: center;
+        width: 100%
     }
 }
 

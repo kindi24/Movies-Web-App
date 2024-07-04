@@ -34,6 +34,7 @@ export class MenuComponent implements OnInit {
   total = window.history.state.total;
 
   ngOnInit(): void {
+    this.checkWidth = window.innerWidth;
     if (this.searchTitle != undefined && this.searchTitle != ''){
       this.currentPage = this.page;
       this.movieTitle = this.searchTitle;
