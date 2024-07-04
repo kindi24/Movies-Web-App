@@ -158,7 +158,7 @@
                 </li>
               </ul>
 
-              <ul class="pagination justify-content-center" id="pagesD" style="width: 266px;">
+              <ul class="pagination justify-content-center" id="pagesD" style="width: 300px;">
               @if (currentPage <= 3){
                     <li class="page-item" [ngClass]="{'active': currentPage === 1}">
                       <a class="page-link" (click)="goToPage(1)">1</a>
@@ -171,6 +171,9 @@
                     </li>
                     <li class="page-item">
                       <a class="page-link">...</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" (click)="goToPage(totalPages - 1)">{{totalPages - 1}}</a>
                     </li>
                     <li class="page-item">
                       <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
@@ -202,6 +205,9 @@
               @else {
                     <li class="page-item">
                       <a class="page-link" (click)="goToPage(1)">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" (click)="goToPage(2)">2</a>
                     </li>
                     <li class="page-item">
                       <a class="page-link">...</a>
