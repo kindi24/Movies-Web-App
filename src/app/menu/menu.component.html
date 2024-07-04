@@ -38,10 +38,10 @@
               <nav aria-label="Page navigation example" id="paginationM" *ngIf="movies.length === 10 || currentPage != 1">
                 <ul class="pagination justify-content-center">
                 <li class="page-item">
-                  <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
+                  <a class="page-link" tabindex="-1" (click)="goToPage(1)">|<</a>
                 </li>
                 <li class="page-item">
-                  <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><</a>
+                  <a class="page-link" tabindex="-1" (click)="goToPage(currentPage - 1)"><</a>
                 </li>
                 </ul>
                 @if (currentPage <= 3){
@@ -103,10 +103,10 @@
                 }
                 <ul class="pagination justify-content-center" style="margin-left: 5px;">
                   <li class="page-item">
-                    <a class="page-link" (click)="nextTenMovies()">></a>
+                    <a class="page-link" (click)="goToPage(currentPage + 1)">></a>
                   </li>
                   <li class="page-item">
-                    <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
+                    <a class="page-link" tabindex="-1" (click)="goToPage(totalPages)">>|</a>
                   </li>
                 </ul>
                 </nav>  
@@ -151,13 +151,13 @@
             <nav aria-label="Page navigation example" id="paginationD" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
               <ul class="pagination justify-content-center" style="margin-left: 5%; margin-right: 50px; ">
                 <li class="page-item">
-                  <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
+                  <a class="page-link" tabindex="-1" (click)="goToPage(1)">|<</a>
                 </li>
                 <li class="page-item">
                   <a class="page-link" tabindex="-1" (click)="goToPage(currentPage - 10)"><<</a>
                 </li>
                 <li class="page-item">
-                  <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><</a>
+                  <a class="page-link" tabindex="-1" (click)="goToPage(currentPage - 1)"><</a>
                 </li>
               </ul>
 
@@ -231,13 +231,13 @@
               
               <ul class="pagination justify-content-center" style="margin-left: 50px;">
                 <li class="page-item">
-                  <a class="page-link" (click)="nextTenMovies()">></a>
+                  <a class="page-link" (click)="goToPage(currentPage + 1)">></a>
                 </li>
                 <li class="page-item">
                   <a class="page-link" tabindex="-1" (click)="goToPage(currentPage + 10)">>></a>
                 </li>
                 <li class="page-item">
-                  <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
+                  <a class="page-link" tabindex="-1" (click)="goToPage(totalPages)">>|</a>
                 </li>
               </ul>
             </nav>

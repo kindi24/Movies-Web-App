@@ -91,30 +91,6 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  firstPage(): void {
-    this.currentPage = 1;
-    this.searchMovies();
-  }
-
-  previousTenMovies(): void {
-    if(this.currentPage > 1){
-      this.currentPage--;
-      this.searchMovies();
-    }
-  }
-
-  nextTenMovies(): void {
-      if (this.currentPage < this.totalPages){
-        this.currentPage++;
-        this.searchMovies();
-      }
-  }
-
-  lastPage(): void {
-    this.currentPage = this.totalPages;
-    this.searchMovies();
-  }
-
   goToPage(page: number): void {
     if (page > 0 && page <= this.totalPages){
       this.currentPage = page;
