@@ -2,7 +2,7 @@
 @if (checkWidth > 1024){
     <div id="containerDesktops">
         <div id="movieContentD">
-            <img [src]="poster" id="imgD">
+            <img [src]="poster" id="imgD" loading="lazy">
             <div id="infoMovieD">
                 <h1>{{title}}</h1>
                 <p>Year: {{year}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type: {{type}}</p>
@@ -14,7 +14,7 @@
 @else if (checkWidth <= 768) {
     <div id="containerMobiles">
         <div id="movieContentM">
-            <img [src]="poster" id="imgM" style="border: 5px solid black; padding: 3px;">
+            <img [src]="poster" id="imgM" loading="lazy" style="border: 5px solid black; padding: 3px;">
             <div id="infoMovieM">
                 <h2>{{title}}</h2>
                 <p>Year: {{year}} &nbsp;&nbsp; Type: {{type}}</p>
