@@ -35,7 +35,7 @@
               </table>
             </div>
 
-              <nav aria-label="Page navigation example" id="paginationM" *ngIf="movies.length === 10 || currentPage != 1">
+              <nav aria-label="Page navigation example" id="paginationM" *ngIf="totalPages > 1">
                 <ul class="pagination justify-content-center" style="margin-right: 3px; width: 150px;">
                 <li class="page-item">
                   <a class="page-link" tabindex="-1" (click)="goToPage(1)">|<</a>
@@ -147,8 +147,8 @@
               </table>
             </div>
 
-            <nav aria-label="Page navigation example" id="paginationD" style="margin-right: 5%;" *ngIf="movies.length === 10 || currentPage != 1">
-              <ul class="pagination justify-content-center" style="margin-left: 5%; margin-right: 50px; width: 127px;">
+            <nav aria-label="Page navigation example" id="paginationD" style="margin-right: 5%;" *ngIf="totalPages > 1">
+              <ul class="pagination justify-content-center" style="margin-left: 5%; margin-right: 30px; width: 127px;">
                 <li class="page-item">
                   <a class="page-link" tabindex="-1" (click)="goToPage(1)">|<</a>
                 </li>
@@ -228,7 +228,7 @@
                   </ul>
               </div>
               
-              <ul class="pagination justify-content-center" style="margin-left: 50px; width: 127px;">
+              <ul class="pagination justify-content-center" style="margin-left: 30px; width: 127px;">
                 <li class="page-item">
                   <a class="page-link" (click)="goToPage(currentPage + 1)">></a>
                 </li>
