@@ -34,11 +34,12 @@
 
     a{
         font-size: medium;
+        text-align: center;
     }
-}
 
-#pagesD li, a{
-    text-align: center;
+    #pagesD li, a{
+        width: 55.25px;
+    }
 }
 
 #containerMobiles{

@@ -56,7 +56,7 @@
                         <a class="page-link" (click)="goToPage(3)">3</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link">...</a>
+                        <a class="page-link">.</a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
@@ -69,13 +69,13 @@
                         <a class="page-link" (click)="goToPage(1)">1</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link">...</a>
+                        <a class="page-link">.</a>
                       </li>
                       <li class="page-item active">
                         <a class="page-link" (click)="goToPage(currentPage)">{{currentPage}}</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link">...</a>
+                        <a class="page-link">.</a>
                       </li>
                       <li class="page-item">
                         <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
@@ -88,7 +88,7 @@
                         <a class="page-link" (click)="goToPage(1)">1</a>
                       </li>
                       <li class="page-item">
-                        <a class="page-link">...</a>
+                        <a class="page-link">.</a>
                       </li>
                       <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 2}">
                         <a class="page-link" (click)="goToPage(totalPages - 2)">{{totalPages - 2}}</a>
@@ -161,7 +161,7 @@
                 </li>
               </ul>
 
-              <div style="width: 320px;">
+              <div style="width: 383px;">
                 <ul class="pagination justify-content-center" id="pagesD">
                   @if (currentPage <= 3){
                         <li class="page-item" [ngClass]="{'active': currentPage === 1}">
@@ -174,7 +174,7 @@
                           <a class="page-link" (click)="goToPage(3)">3</a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link">...</a>
+                          <a class="page-link">.</a>
                         </li>
                         <li class="page-item">
                           <a class="page-link" (click)="goToPage(totalPages - 1)">{{totalPages - 1}}</a>
@@ -188,7 +188,7 @@
                           <a class="page-link" (click)="goToPage(1)">1</a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link">...</a>
+                          <a class="page-link">.</a>
                         </li>
                         <li class="page-item">
                           <a class="page-link" (click)="goToPage(currentPage - 1)">{{currentPage - 1}}</a>
@@ -200,7 +200,7 @@
                           <a class="page-link" (click)="goToPage(currentPage + 1)">{{currentPage + 1}}</a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link">...</a>
+                          <a class="page-link">.</a>
                         </li>
                         <li class="page-item">
                           <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
@@ -214,7 +214,7 @@
                           <a class="page-link" (click)="goToPage(2)">2</a>
                         </li>
                         <li class="page-item">
-                          <a class="page-link">...</a>
+                          <a class="page-link">.</a>
                         </li>
                         <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 2}">
                           <a class="page-link" (click)="goToPage(totalPages - 2)">{{totalPages - 2}}</a>
