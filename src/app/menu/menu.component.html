@@ -154,6 +154,9 @@
                   <a class="page-link" tabindex="-1" (click)="firstPage()">|<</a>
                 </li>
                 <li class="page-item">
+                  <a class="page-link" tabindex="-1" (click)="goToPage(currentPage - 10)"><<</a>
+                </li>
+                <li class="page-item">
                   <a class="page-link" tabindex="-1" (click)="previousTenMovies()"><</a>
                 </li>
               </ul>
@@ -229,6 +232,9 @@
               <ul class="pagination justify-content-center" style="margin-left: 50px;">
                 <li class="page-item">
                   <a class="page-link" (click)="nextTenMovies()">></a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" tabindex="-1" (click)="goToPage(currentPage + 10)">>></a>
                 </li>
                 <li class="page-item">
                   <a class="page-link" tabindex="-1" (click)="lastPage()">>|</a>
