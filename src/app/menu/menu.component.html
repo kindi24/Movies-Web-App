@@ -2,7 +2,133 @@
 <!--Tablets-->
 @if (checkWidth > 768 && checkWidth <=1024) {
     <div id="containerTablets">
-        <p>menu works!</p>
+      <h2>{{ searchDesc }}</h2>
+      <div class="input-group rounded" style="margin-left: 35%; width: 30%">
+          <input type="search" class="form-control rounded" placeholder="Search by Title" aria-label="Search" [(ngModel)]="movieTitle" name="movieTitle"
+          aria-describedby="search-addon" (keydown.enter)="firstSearchMovies()" style="font-size: 15px;"/>
+          <span class="input-group-text border-0" id="search-addon" (click)="firstSearchMovies()" style="width: 6%;">
+            <i class="fas fa-search" id="iconSearch"></i>
+          </span>
+        </div>
+
+        @if (movies.length > 0){
+          <div style="width: 70%; margin-left: 15%; height: 600px; margin-top: 20px;">
+            <table class="table table-striped table-hover" id="TableT" style="font-size: medium;">
+              <thead>
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col" style="text-align: end;">Year</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let movie of movies" style="cursor: pointer;" (click)="showMovieData(movie)">
+                  <td style="text-align: start;">{{ movie.Title }}</td>
+                  <td style="text-align: end;">{{ movie.Year }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <nav aria-label="Page navigation example" id="paginationT" style="margin-right: 5%;" *ngIf="totalPages > 1">
+            <ul class="pagination justify-content-center" style="margin-left: 5%; margin-right: 20px; width: 127px;">
+              <li class="page-item">
+                <a class="page-link" tabindex="-1" (click)="goToPage(1)">|<</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" tabindex="-1" (click)="goToPage(currentPage - 10)"><<</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" tabindex="-1" (click)="goToPage(currentPage - 1)"><</a>
+              </li>
+            </ul>
+
+            <div style="width: 340px;">
+              <ul class="pagination justify-content-center">
+                @if (currentPage <= 3){
+                      <li class="page-item" [ngClass]="{'active': currentPage === 1}">
+                        <a class="page-link" (click)="goToPage(1)">1</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === 2}">
+                        <a class="page-link" (click)="goToPage(2)">2</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === 3}">
+                        <a class="page-link" (click)="goToPage(3)">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link">.</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" (click)="goToPage(totalPages - 1)">{{totalPages - 1}}</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
+                      </li>
+                }
+                @else if (currentPage > 3 && currentPage < totalPages - 2){
+                      <li class="page-item">
+                        <a class="page-link" (click)="goToPage(1)">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link">.</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" (click)="goToPage(currentPage - 1)">{{currentPage - 1}}</a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link" (click)="goToPage(currentPage)">{{currentPage}}</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" (click)="goToPage(currentPage + 1)">{{currentPage + 1}}</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link">.</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
+                      </li>
+                }
+                @else {
+                      <li class="page-item">
+                        <a class="page-link" (click)="goToPage(1)">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" (click)="goToPage(2)">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link">.</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 2}">
+                        <a class="page-link" (click)="goToPage(totalPages - 2)">{{totalPages - 2}}</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === totalPages - 1}">
+                        <a class="page-link" (click)="goToPage(totalPages - 1)">{{totalPages - 1}}</a>
+                      </li>
+                      <li class="page-item" [ngClass]="{'active': currentPage === totalPages}">
+                        <a class="page-link" (click)="goToPage(totalPages)">{{totalPages}}</a>
+                      </li>
+                }
+                </ul>
+            </div>
+            
+            <ul class="pagination justify-content-center" style="margin-left: 20px; width: 127px;">
+              <li class="page-item">
+                <a class="page-link" (click)="goToPage(currentPage + 1)">></a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" tabindex="-1" (click)="goToPage(currentPage + 10)">>></a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" tabindex="-1" (click)="goToPage(totalPages)">>|</a>
+              </li>
+            </ul>
+          </nav>
+          
+
+        }@else if (movies.length === 0 && movieTitle.trim() && clickedSearch) {
+          <div>
+            <p style="margin-top: 10%;"><b>No movies found.</b></p>
+          </div>
+        }
     </div>
 }
 @else if (checkWidth <= 768){
