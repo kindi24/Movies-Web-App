@@ -26,9 +26,13 @@
 @else {
     <div id="containerTablets">
         <div id="movieContentT">
-            
+                <img [src]="poster" id="imgD" loading="lazy">
+                <div id="infoMovieD">
+                    <h1>{{title}}</h1>
+                    <p>Year: {{year}} &nbsp;&nbsp;&nbsp; Type: {{type}}</p>
+                </div>
         </div>
-        <button class="btn btn-lg btn-success" type="submit" (click)="returnMenu()">Return</button>
+        <button class="btn btn-lg btn-success" type="submit" id="returnT" (click)="returnMenu()">Return</button>
     </div>
 }
 <app-footer></app-footer>

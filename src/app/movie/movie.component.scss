@@ -100,4 +100,45 @@
   max-width: 100%;
   height: 900px;
   background-color: whitesmoke;
+  background-size: 100% 1000px;
+  background-image: url('../../assets/images/cinema.png');
+}
+
+#movieContentT{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#imgT{
+  width: 300px;
+  height: 426px;
+  border: 5px solid black;
+  background-color: white; 
+}
+
+#infoMovieT{
+  margin-left: 20px;
+  text-align: center;
+  width: 30%;
+
+  h1{
+    font-weight: bold;
+  }
+
+  p{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 20px;
+  }
+}
+
+#returnT{
+  margin-left: 47%; 
+  margin-top: 250px;
+  width: 90px;
+  height: 45px;
+  font-weight: bold;
+  font-size: large;
+  border: 2px solid black; 
 }
