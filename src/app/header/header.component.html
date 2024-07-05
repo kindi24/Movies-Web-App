@@ -49,4 +49,27 @@
       </nav>
     }
   }
+  @else {
+        <!--Tablets-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary" style="margin-bottom: 0px;">
+          <div class="container-fluid">
+              <img src="/assets/images/Logo.png">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link" href="/menu" style="font-size: large;"><b>Menu</b></a>
+                <a class="nav-link" href="/settings" style="font-size: large;"><b>Settings</b></a>
+              </div>
+          
+              <div class="dropdown-container">
+                <img [src]="profilePhoto" (click)="profileContent()">
+                <div *ngIf="profileVisible" class="dropdown-menu" style="font-size: medium;">
+                  <a (click)="myAccount()">My account</a>
+                  <a (click)="logout()">Logout</a>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </nav>
+  }
 </header>
