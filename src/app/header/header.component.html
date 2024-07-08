@@ -1,37 +1,46 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary" style="margin-bottom: 0px;">
-    <div class="container-fluid">
-        <img id="logo" src="/assets/images/Logo.png">
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/menu" style="font-size: large;"><b>Menu</b></a>
-          <a class="nav-link" href="/settings" style="font-size: large;"><b>Settings</b></a>
-        </div>
-    
-        <div class="dropdown-container">
-          <img [src]="profilePhoto" (click)="profileContent()">
-          <div *ngIf="profileVisible" class="dropdown-menu">
-            <a (click)="myAccount()">My account</a>
-            <a (click)="logout()">Logout</a>
+  @if (checkWidth > 1024){
+    <!--Desktops-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary" style="margin-bottom: 0px;">
+      <div class="container-fluid">
+          <img id="logo" src="/assets/images/Logo.png">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="/menu" style="font-size: large;"><b>Menu</b></a>
+            <a class="nav-link" href="/settings" style="font-size: large;"><b>Settings</b></a>
           </div>
+      
+          <div class="dropdown-container">
+            <img [src]="profilePhoto" style="margin-left: 150px;" (click)="profileContent()">
+            <div *ngIf="profileVisible" class="dropdown-menu" style="font-size: medium;">
+              <a (click)="myAccount()">My account</a>
+              <a (click)="logout()">Logout</a>
+            </div>
+          </div>
+          
         </div>
-        
-      </div>
-      @if (checkWidth < 768) {
-        <div class="toggle">
-          <img [src]="image" (click)="toggleMenu()">
-        </div>
-      }
-    </div>
-  </nav>
-  @if (checkWidth < 768 && this.isMenuOpen) {   
-    <nav class="navbar navbar-light bg-light" id="navMobile">
-      <div class="navbar-nav" id="navBarMobile">
-        <a class="nav-link" href="/menu" style="font-size: large;"><b>Menu</b></a>
-        <a class="nav-link" href="/settings" style="font-size: large;"><b>Settings</b></a>
-        <a class="nav-link" href="#" style="font-size: large;"><b>My Account</b></a>
-        <a class="nav-link" href="javascript:void(0)" (click)="logout()" style="font-size: large;"><b>Logout</b></a>
       </div>
     </nav>
+  }
+  @else {
+        <!--Mobiles and Tablets-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary" style="margin-bottom: 0px;">
+          <div class="container-fluid">
+              <img id="logo" src="/assets/images/Logo.png">
+              <div class="toggle">
+                <img [src]="image" (click)="toggleMenu()">
+              </div>      
+          </div>
+        </nav>
+        @if (this.isMenuOpen) {   
+          <nav class="navbar navbar-light bg-light" id="navMobile">
+            <div class="navbar-nav" id="navBarMobile">
+              <a class="nav-link" href="/menu" style="font-size: large;"><b>Menu</b></a>
+              <a class="nav-link" href="/settings" style="font-size: large;"><b>Settings</b></a>
+              <a class="nav-link" href="#" style="font-size: large;"><b>My Account</b></a>
+              <a class="nav-link" href="javascript:void(0)" (click)="logout()" style="font-size: large;"><b>Logout</b></a>
+            </div>
+          </nav>
+        }
   }
 </header>

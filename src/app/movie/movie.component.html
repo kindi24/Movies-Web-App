@@ -1,0 +1,38 @@
+<app-header></app-header>
+@if (checkWidth > 1024){
+    <div id="containerDesktops">
+        <div id="movieContentD">
+            <img [src]="poster" id="imgD" loading="lazy">
+            <div id="infoMovieD">
+                <h1>{{title}}</h1>
+                <p>Year: {{year}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type: {{type}}</p>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-success" id="returnD" type="submit" (click)="returnMenu()">Return</button>
+    </div>
+}
+@else if (checkWidth <= 768) {
+    <div id="containerMobiles">
+        <div id="movieContentM">
+            <img [src]="poster" id="imgM" loading="lazy" style="border: 5px solid black; padding: 3px;">
+            <div id="infoMovieM">
+                <h2>{{title}}</h2>
+                <p>Year: {{year}} &nbsp;&nbsp; Type: {{type}}</p>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-success" id="returnM" type="submit" (click)="returnMenu()">Return</button>
+    </div>
+}
+@else {
+    <div id="containerTablets">
+        <div id="movieContentT">
+                <img [src]="poster" id="imgD" loading="lazy">
+                <div id="infoMovieD">
+                    <h1>{{title}}</h1>
+                    <p>Year: {{year}} &nbsp;&nbsp;&nbsp; Type: {{type}}</p>
+                </div>
+        </div>
+        <button class="btn btn-lg btn-success" type="submit" id="returnT" (click)="returnMenu()">Return</button>
+    </div>
+}
+<app-footer></app-footer>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,9 +9,20 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   constructor(private router: Router) {}
+
+  public checkWidth: any;
+  
+  ngOnInit(): void {
+    this.checkWidth = window.innerWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkWidth = window.innerWidth;
+  }
 
   profilePhoto: any = "assets/images/person.svg";
   profileVisible = false;
@@ -31,8 +42,6 @@ export class HeaderComponent {
       this.router.navigate(['']);
     }
   }
-
-  checkWidth = window.innerWidth;
 
   image: any = "assets/images/menu.svg";
   isMenuOpen = false;

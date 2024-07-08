@@ -1,0 +1,144 @@
+#containerDesktops{
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  max-width: 100%;
+  height: 720px;
+  background-color: whitesmoke;
+  background-size: 100% 800px;
+  background-image: url('../../assets/images/cinema.png');
+}
+
+#movieContentD{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#imgD{
+  width: 300px;
+  height: 426px;
+  border: 5px solid black;
+  background-color: white; 
+}
+
+#infoMovieD{
+  margin-left: 20px;
+  text-align: center;
+  width: 30%;
+
+  h1{
+    font-weight: bold;
+  }
+
+  p{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 20px;
+  }
+}
+
+#returnD{
+  margin-left: 47%; 
+  margin-top: 150px;
+  width: 90px;
+  height: 45px;
+  font-weight: bold;
+  font-size: large;
+  border: 2px solid black; 
+}
+
+#containerMobiles{
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  max-width: 100%;
+  height: 700px;
+  background-color: whitesmoke;
+  background-size: 100% 700px;
+  background-image: url('../../assets/images/cinema mobile.png');
+}
+
+#movieContentM{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#imgM{
+  width: 170px;
+  height: 260px;
+  border: 5px solid black;
+  background-color: white;  
+}
+
+#infoMovieM{
+  margin-left: 10px;
+  text-align: center;
+
+  h2{
+    font-weight: bold;
+  }
+
+  p{
+    font-size: small;
+    font-weight: bold;
+  }
+}
+
+#returnM{
+  margin-left: 38%; 
+  margin-top: 300px;
+  width: 85px;
+  height: 45px;
+  font-weight: bold;
+  font-size: large;
+  border: 2px solid black; 
+}
+
+#containerTablets{
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  max-width: 100%;
+  height: 900px;
+  background-color: whitesmoke;
+  background-size: 100% 1000px;
+  background-image: url('../../assets/images/cinema.png');
+}
+
+#movieContentT{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#imgT{
+  width: 300px;
+  height: 426px;
+  border: 5px solid black;
+  background-color: white; 
+}
+
+#infoMovieT{
+  margin-left: 20px;
+  text-align: center;
+  width: 30%;
+
+  h1{
+    font-weight: bold;
+  }
+
+  p{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 20px;
+  }
+}
+
+#returnT{
+  margin-left: 47%; 
+  margin-top: 250px;
+  width: 90px;
+  height: 45px;
+  font-weight: bold;
+  font-size: large;
+  border: 2px solid black; 
+}

@@ -14,5 +14,9 @@ export const routes: Routes = [
     {
         path: 'settings', 
         loadChildren: () => import('./settings/settings-routing.module').then((m) => m.SettingsRoutingModule),
+    },
+    {
+        path: 'movie', 
+        loadChildren: () => import('./movie/movie-routing.module').then((m) => m.MovieRoutingModule),
     }
 ];
