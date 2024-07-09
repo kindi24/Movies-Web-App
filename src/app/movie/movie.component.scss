@@ -1,5 +1,6 @@
 @import "../containers.scss";
 
+//Desktops
 #movieContentD{
   display: flex;
   justify-content: center;
@@ -39,6 +40,7 @@
   border: 2px solid black; 
 }
 
+//Mobiles
 #movieContentM{
   display: flex;
   justify-content: center;
@@ -76,6 +78,7 @@
   border: 2px solid black; 
 }
 
+//Tablets
 #movieContentT{
   display: flex;
   justify-content: center;
