@@ -1,15 +1,17 @@
-#container{
+#containerDesktops{
     padding: 10px;
     margin: 10px 0px 10px 0px;
     max-width: 100%;
-    height: 700px;
+    height: 720px;
     background-color: whitesmoke;
-}
+    background-size: 100% 800px;
 
-#containerTablets{
-    padding: 10px;
-    margin: 10px 0px 10px 0px;
-    max-width: 100%;
-    height: 900px;
-    background-color: whitesmoke;
+    h1{
+        font-size: x-large;
+        font-weight: bold;
+    }
+
+    input{
+        font-size: medium;
+    }
 }
