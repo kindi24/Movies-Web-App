@@ -1,1 +1,1 @@
-# Movie Web App
+# Movies Web App
