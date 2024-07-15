@@ -1,10 +1,10 @@
 <app-header></app-header>
 @if (checkWidth > 1024){
   <div id="containerDesktops">
-    <div class="container bootstrap snippets bootdey">
+    <div class="container bootstrap snippets bootdey" style="margin-top: 20px;">
       <h1 class="text">Account Settings</h1>
         <hr>
-    <div class="row">
+    <div class="row" style="padding-left: 50px; margin-top: 30px;">
         <!-- left column -->
         <div class="col-md-3">
           <div class="text-center">
@@ -52,6 +52,10 @@
               </div>
             </div>
           </form>
+          <div class="text-right mt-3" style="margin-right: 80px;">
+            <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
+            <button type="button" class="btn btn-default">Cancel</button>
+          </div>
         </div>
       </div>
     </div>
