@@ -1,17 +1,27 @@
-#containerDesktops{
-    padding: 10px;
-    margin: 10px 0px 10px 0px;
-    max-width: 100%;
-    height: 720px;
-    background-color: whitesmoke;
-    background-size: 100% 800px;
+@import "../containers.scss";
 
+#settingsContentD{
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 80%;
+    padding: 20px 20px 0px 20px;
     h1{
         font-size: x-large;
         font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
     input{
         font-size: medium;
+    }
+}
+
+#buttonsD{
+    margin-right: 75px;
+    margin-top: 50px;
+    
+    button{
+        font-weight: bold;
+        font-size: small;
     }
 }
