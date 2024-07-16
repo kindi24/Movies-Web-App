@@ -1,12 +1,188 @@
 <app-header></app-header>
-@if (checkWidth > 768 && checkWidth <=1024){
-    <div id="containerTablets">
-        <p>settings works!</p>
+@if (checkWidth > 1024){
+  <!--Desktops-->
+  <div id="containerDesktops">
+    <div class="container bootstrap snippets bootdey" id="settingsContentD">
+      <h1 class="text">Account Settings</h1>
+        <hr>
+      <div class="row" style="margin-left: 15%; margin-top: 30px;">
+        <div class="col-md-9 personal-info" style="padding: 0px 20px 0px 20px;">        
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">First Name:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Last Name:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Username:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Email:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" value="">
+              </div>
+            </div>
+            <div class="text-right mt-3" id="buttonsD">
+              <button type="button" class="btn btn-primary btn-lg">Save changes</button>&nbsp;
+              <button type="button" class="btn btn-default btn-lg">Cancel</button>
+            </div>
+          </form>
+          <hr style="margin-top: 20px;">
+          <form class="form-horizontal" role="form">
+            <div class="form-group" style="margin-top: 20px;">
+              <label class="col-lg-3 control-label">New Password:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="password" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Confirm New Password:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="password" value="">
+              </div>
+            </div>
+            <div class="text-right mt-3" id="buttonsD">
+              <button type="button" class="btn btn-primary btn-lg">Save changes</button>&nbsp;
+              <button type="button" class="btn btn-default btn-lg">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+@else if (checkWidth <= 768){
+  <!--Mobiles-->
+    <div id="containerMobiles">
+      <div class="container bootstrap snippets bootdey" id="settingsContentM">
+        <h1 class="text">Account Settings</h1>
+        <hr>
+        <div class="row" style="margin-top: 10px;">
+          <div class="col-md-9 personal-info">        
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="col-lg-3 control-label">First Name:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Last Name:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Username:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Email:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="">
+                </div>
+              </div>
+              <div class="text-right mt-3" id="buttonsM">
+                <button type="button" class="btn btn-primary btn-lg">Save changes</button>&nbsp;
+                <button type="button" class="btn btn-default btn-lg">Cancel</button>
+              </div>
+            </form>
+            <hr style="margin-top: 20px;">
+            <form class="form-horizontal" role="form">
+              <div class="form-group" style="margin-top: 20px;">
+                <label class="col-lg-3 control-label">New Password:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="password" value="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Confirm New Password:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="password" value="">
+                </div>
+              </div>
+            <div class="text-right mt-3" id="buttonsM">
+              <button type="button" class="btn btn-primary btn-lg">Save changes</button>&nbsp;
+              <button type="button" class="btn btn-default btn-lg">Cancel</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 }
 @else {
-    <div id="container">
-        <p>settings works!</p>
+  <!--Tablets-->
+    <div id="containerTablets">
+      <div class="container bootstrap snippets bootdey" id="settingsContentT">
+        <h1 class="text">Account Settings</h1>
+        <hr>
+        <div class="row" style="margin-top: 10px;">
+          <div class="col-md-9 personal-info" id="personal-info">        
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="col-lg-3 control-label">First Name:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Last Name:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Username:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Email:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" value="">
+                </div>
+              </div>
+              <div class="text-right mt-3" id="buttonsT">
+                <button type="button" class="btn btn-primary btn-lg">Save changes</button>&nbsp;
+                <button type="button" class="btn btn-default btn-lg">Cancel</button>
+              </div>
+            </form>
+            <hr style="margin-top: 20px;">
+            <form class="form-horizontal" role="form">
+              <div class="form-group" style="margin-top: 20px;">
+                <label class="col-lg-3 control-label">New Password:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="password" value="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Confirm New Password:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="password" value="">
+                </div>
+              </div>
+            <div class="text-right mt-3" id="buttonsT">
+              <button type="button" class="btn btn-primary btn-lg">Save changes</button>&nbsp;
+              <button type="button" class="btn btn-default btn-lg">Cancel</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 }
 <app-footer></app-footer>
