@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   myAccount(){
-    console.log("My account");
+    this.router.navigate(['/account']);
   }
 
   logout(){
