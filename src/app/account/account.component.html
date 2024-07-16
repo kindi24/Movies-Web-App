@@ -1,1 +1,18 @@
-<p>account works!</p>
+<app-header></app-header>
+    @if (checkWidth > 1024){
+        <div id="containerDesktops">
+
+        </div>
+    }
+    @else if (checkWidth <= 768) {
+        <div id="containerMobiles">
+
+        </div>
+    }
+    @else {
+        <div id="containerTablets">
+
+        </div>
+    }
+<app-footer></app-footer>
+
