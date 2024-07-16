@@ -1,14 +1,21 @@
 @import "../containers.scss";
 
+// Desktops
+
 #settingsContentD{
     margin-top: 50px;
     background-color: rgba(255, 255, 255, 0.8);
     height: 80%;
     padding: 20px 20px 0px 20px;
+
     h1{
         font-size: x-large;
         font-weight: bold;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    form{
+        font-size: medium;
     }
 
     input{
@@ -18,6 +25,38 @@
 
 #buttonsD{
     margin-right: 75px;
+    margin-top: 50px;
+    
+    button{
+        font-weight: bold;
+        font-size: small;
+    }
+}
+
+// Mobiles
+
+#settingsContentM{
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 99%;
+    padding: 20px 20px 0px 20px;
+
+    h1{
+        font-size: large;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    form{
+        font-size: small;
+    }
+
+    input{
+        font-size: small;
+    }
+}
+
+#buttonsM{
     margin-top: 50px;
     
     button{
