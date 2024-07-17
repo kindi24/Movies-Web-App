@@ -3,8 +3,9 @@ import path from 'path';
 import { MenuComponent } from './menu/menu.component';
 
 export const routes: Routes = [
+    { path: "", redirectTo: "/login", pathMatch: "full" },
     {
-        path: '', 
+        path: 'login', 
         loadChildren: () => import('./login/login-routing.module').then((m) => m.LoginRoutingModule),
     },
     {
