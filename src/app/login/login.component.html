@@ -5,16 +5,8 @@
         <form class="form-signin">
             <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div id="remember" class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember Me
-                </label>
-            </div>
-            <button class="btn btn-lg btn-success btn-block btn-signin" type="submit" (click)="login()">Login</button>
+            <button class="btn btn-lg btn-success btn-block btn-signin" type="submit" (click)="login()" style="margin-top: 40px;">Login</button>
         </form>
-        <a href="#" class="forgot-password">
-            Forgot the password?
-        </a>
         <hr style="margin-top: 20px;">
         <div class="text-center">
             <p>Not a member? <a href="/register">Register</a></p>
